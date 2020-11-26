@@ -12,7 +12,8 @@ const express = require('express'),
 	  Profile = require('./models/profile');
 
 // connect to mongoose.
-mongoose.connect('mongodb://localhost/final', {
+// mongoose.connect('mongodb://localhost/final', {
+mongoose.connect("mongodb+srv://first_user:DH7ZXEMKVRSYWyKl@cloudvend.fp1es.mongodb.net/<dbname>?retryWrites=true&w=majority", {
 	useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true
 }).then(() => {
 	console.log('Connected to DB')
