@@ -1,7 +1,7 @@
 <%- include("partials/header") %>
 <%- include("partials/landingHeader") %>
 
-<div class="container">
+<div class="container-fluid">
 	<div class="jumbotron">
 		<h1 class="cloud" id="style">CloudVend</h1>
 		<p class="center">Barter, Socialize, Become Involved</p>
@@ -9,10 +9,10 @@
 		
 		<div>
 			<%if(currentUser){%>
-				<a href="/items" id="auto" class="spacing"><button type="button" id="auto" class="btn btn-success btn-lg btn-block">Enter CloudVend</button></a>
+				<a href="/items" class="spacing"><button type="button" class="btn btn-success btn-lg btn-block">Enter</button></a>
 			<%} else {%>
 				<a href="/register" class="spacing"><button type="button" class="btn btn-primary btn-lg btn-block">Register</button></a>
-				<a href="/login" class="spacing"><button type="button" class="btn btn-success btn-lg btn-block">Login</button></a>	
+				<a href="/login" class="spacing"><button type="button" class="btn btn-success btn-lg btn-block">Login</button></a>
 			<%}%>
 		</div>
 	</div>	
