@@ -12,7 +12,9 @@ const express = require('express'),
 	  Profile = require('./models/profile');
 
 // connect to mongoose.
-mongoose.connect(process.env.DATABASEURL, {
+var url = process.env.DATABASEURL || "mongodb://localhost/final";
+
+mongoose.connect(url, {
 	useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true
 }).then(() => {
 	console.log('Connected to DB')
