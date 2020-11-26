@@ -12,7 +12,6 @@ const express = require('express'),
 	  Profile = require('./models/profile');
 
 // connect to mongoose.
-// mongoose.connect('mongodb://localhost/final', {
 mongoose.connect(process.env.DATABASEURL, {
 	useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true
 }).then(() => {
