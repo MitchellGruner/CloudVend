@@ -1,0 +1,14 @@
+<%- include("../partials/header") %>
+
+<form action="/items/<%=items._id%>/comments/new" method="POST">
+	<div class="container form">
+		<h1 id="center">Add a Comment</h1>
+		<div class="spacing">
+			<textarea class="form-control textarea" type="input" name="text" placeholder="text" style="height:10em;"required></textarea>
+		</div>
+		
+		<button type="submit" class="btn btn-success">Submit!</button>
+		<button class="btn btn-info"><a href="/items">Go Back</a></button>
+	</div>
+</form>
+

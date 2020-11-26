@@ -1,0 +1,21 @@
+<%- include("./partials/header") %>
+
+<form action="/register" method="POST">
+	<div class="container" id="form">
+		<div class="spacing">
+			<input class="form-control" type="input" name="email" placeholder="email">
+		</div>
+		<div class="spacing">
+			<input class="form-control" type="input" name="username" placeholder="name">
+		</div>
+		<div class="spacing">
+			<input class="form-control" type="password" name="password" placeholder="password">	
+		</div>
+		<div class="spacing">
+			<input class="form-control" type="input" name="city" placeholder="city">
+		</div>
+		<button type="submit" class="btn btn-success form-control">Register</button>
+	</div>
+</form>
+
+<%- include("./partials/footer") %>

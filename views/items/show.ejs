@@ -1,0 +1,44 @@
+<%- include("../partials/header")%>
+
+<div class="menu">
+	<ul class="list-group">
+		<li class="list-group-item"><p>Welcome, <%=currentUser.username%></p></li>
+  		<li class="list-group-item"><p><a href="/items/new">Create a New Item</a></p></li>
+		<li class="list-group-item"><p><a href="/user">Go to Profiles Page</a></p></li>
+		<li class="list-group-item"><p><a href="/items">View Items From <%=currentUser.city%></a></p></li>
+		<li class="list-group-item"><p><a href="/items/all">View all Items</a></p></li>
+ 		<li class="list-group-item"><p><a href="back">Go Back</a></p></li>
+	</ul>
+</div>
+
+<div class="container right">
+	<div class="row text-center">
+		<div class="col-md-9 pull-right">
+			<div class="thumbnail">
+				<img class="img-responsive containment large" src="<%=items.image%>"/>
+					<div class="caption-full">
+						<h4 class="pull-right">$<%=items.price%></h4>
+						<div class="align left">
+							<h4><a><%=items.name%></a></h4>
+								<h5>Created by <strong><%=items.author.username%></strong></h5>
+								<h5>Condition is <strong><%=items.condition%></strong></h5>
+								<p><%=items.description%></p>
+							<button class="btn btn-md btn-primary btn-block"><a href="/items/<%=items._id%>/comments/new"><h6 id="white">Message</h6></a></button>
+							<br><hr><br>
+							<%items.comments.forEach((comment) => {%>
+							<h1 id="comment"><strong><%=comment.author.username%></strong></h1>
+								<h1 id="commentText"><%=comment.text%></h1>
+							
+								<%if(currentUser && comment.author.id.equals(currentUser._id)){%>
+									<form id="delete-form" action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
+										<button class="btn btn-danger">Delete</button>
+									</form>	
+								<%}%>
+							<hr>
+							<%});%>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

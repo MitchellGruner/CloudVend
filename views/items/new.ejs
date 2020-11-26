@@ -1,0 +1,26 @@
+<%- include("../partials/header") %>
+
+<form action="/items" method="POST">
+	<div class="container form">
+		<h1 id="center">Create a New Item</h1>
+		<div class="spacing">
+			<input class="form-control" type="input" name="name" placeholder="item name" required>
+		</div>
+		<div class="spacing">
+			<input class="form-control" type="input" name="image" placeholder="image url">
+		</div>
+		<div class="spacing">
+			<input class="form-control" type="number" name="price" placeholder="price" min="0.01" step="0.01" required>
+		</div>
+		<div class="spacing">
+			<input class="form-control" type="input" name="description" placeholder="description" required>	
+		</div>
+		<div class="spacing">
+			<input class="form-control" type="input" name="condition" placeholder="condition">
+		</div>
+		
+		<button type="submit" class="btn btn-success">Submit!</button>
+		<button class="btn btn-info"><a href="/items">Go Back</a></button>
+	</div>
+</form>
+

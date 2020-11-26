@@ -1,0 +1,36 @@
+body {
+	background-image: url("https://images.unsplash.com/photo-1524813686514-a57563d77965?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80");
+	background-size: cover;
+}
+
+.jumbotron {
+	float: right;
+	width: 25%;
+	margin-top: 5%;
+	border-radius: 200px;
+	overflow-wrap: break-word;
+}
+
+.cloud {
+	font-family: 'Caveat', cursive;
+	padding: 5px;
+}
+
+#style {
+	font-size: 4em;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.container {
+	width: 100%;
+}
+
+#center {
+	font-size: 1em;
+	float: left;
+}
+
+.center {
+	text-align: center;
+}
