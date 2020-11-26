@@ -13,7 +13,7 @@ const express = require('express'),
 
 // connect to mongoose.
 // mongoose.connect('mongodb://localhost/final', {
-mongoose.connect("mongodb+srv://first_user:DH7ZXEMKVRSYWyKl@cloudvend.fp1es.mongodb.net/<dbname>?retryWrites=true&w=majority", {
+mongoose.connect(process.env.DATABASEURL, {
 	useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true
 }).then(() => {
 	console.log('Connected to DB')
