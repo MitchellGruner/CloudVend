@@ -34,3 +34,9 @@ body {
 .center {
 	text-align: center;
 }
+
+#auto {
+	width: auto;
+	margin: 0 auto;
+    display: block;
+}
