@@ -10,12 +10,19 @@ const express = require('express'),
 	  User = require('./models/user'),
 	  Comment = require('./models/comments'),
 	  Profile = require('./models/profile');
+	  require('dotenv').config()
+	  flash = require('connect-flash');
+	  helmet = require('helmet');
+	  session = require('express-session'),
+	  MongoDBStore = require("connect-mongo")(session);
 
-// connect to mongoose.
-var url = process.env.DATABASEURL || "mongodb://localhost/final";
+// connect to database.
+const dbUrl = process.env.DB_URL;
+// const dbUrl = 'mongodb://localhost:27017/CloudVend';
 
-mongoose.connect(url, {
-	useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true
+mongoose.connect(dbUrl, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
 }).then(() => {
 	console.log('Connected to DB')
 }).catch(error => {
@@ -35,8 +42,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 
 // configure passport authentication.
-app.use(require("express-session")({
-	secret: "secret",
+app.use(require('express-session')({
+	secret: 'secret',
 	resave: false,
 	saveUninitialized: false
 }));
@@ -58,6 +65,54 @@ app.use("/", commentRoutes);
 app.use("/", itemsRoutes);
 app.use("/", indexRoutes);
 app.use("/", profileRoutes);
+
+const store = new MongoDBStore({
+	url: dbUrl,
+	secret: 'thisshouldbeabettersecret!',
+	touchAfter: 24 * 60 * 60
+});
+
+store.on("error", function (e) {
+	console.log("SESSION STORE ERROR", e);
+});
+
+const sessionConfig = {
+	store,
+	name: 'session',
+	secret: 'thisshouldbeabettersecret!',
+	resave: false,
+	saveUninitialized: true,
+	cookie: {
+		httpOnly: true,
+		// secure: true,
+		maxAge: Date.now() + 1000 * 60 * 60 * 24 * 7,
+	}
+}
+
+app.use(session(sessionConfig));
+app.use(flash());
+app.use(helmet());
+
+app.use(
+    helmet.contentSecurityPolicy({
+        directives: {
+            defaultSrc: [],
+            connectSrc: ["'self'", ...connectSrcUrls],
+            scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
+            styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
+            workerSrc: ["'self'", "blob:"],
+            objectSrc: [],
+            imgSrc: [
+                "'self'",
+                "blob:",
+                "data:",
+                "https://res.cloudinary.com/douqbebwk/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://images.unsplash.com/",
+            ],
+            fontSrc: ["'self'", ...fontSrcUrls],
+        },
+    })
+);
 
 // function lets us know server is properly set up.
 app.listen(port, () => {  
