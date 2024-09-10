@@ -18,7 +18,6 @@ const express = require('express'),
 
 // connect to database.
 const dbUrl = process.env.DB_URL;
-// const dbUrl = 'mongodb://localhost:27017/CloudVend';
 
 mongoose.connect(dbUrl, {
 	useNewUrlParser: true,
