@@ -1,21 +1,25 @@
 <%- include("partials/header") %>
 <%- include("partials/landingHeader") %>
 
-<div class="container-fluid">
-	<div class="jumbotron">
-		<h1 class="cloud" id="style">CloudVend</h1>
-		<p class="center">Barter, Socialize, Become Involved</p>
-		<hr>
-		
+<section id="landing-page" class="container-fluid">
+	<div class="container">
 		<div>
+			<figure>
+				<img src="/images/cloudvend.png" alt="CloudVend Logo" />
+			</figure>
+	
+			<h1><span>Your Virtual Barter Hub</span></h1>
+			<p>Whether you're clearing out clutter or finding something new, CloudVend makes the bartering experience efficient and straightforward.</p>
+			<hr />
+	
 			<%if(currentUser){%>
-				<a href="/items" class="spacing"><button type="button" class="btn btn-success btn-lg btn-block">Enter</button></a>
+				<a href="/items">Enter</a>
 			<%} else {%>
-				<a href="/register" class="spacing"><button type="button" class="btn btn-primary btn-lg btn-block">Register</button></a>
-				<a href="/login" class="spacing"><button type="button" class="btn btn-success btn-lg btn-block">Login</button></a>
+				<a href="/login">Login</a>
+				<a href="/register">Register</a>
 			<%}%>
 		</div>
-	</div>	
-</div>
+	</div>
+</section>
 
 <%- include("partials/footer") %>
