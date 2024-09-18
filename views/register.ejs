@@ -1,21 +1,27 @@
-<%- include("./partials/header") %>
+<%- include("partials/header") %>
+<%- include("partials/landingHeader") %>
 
-<form action="/register" method="POST">
-	<div class="container" id="form">
-		<div class="spacing">
-			<input class="form-control" type="input" name="email" placeholder="email">
+<section id="landing-page" class="container-fluid">
+	<div class="container">
+		<div>
+			<figure>
+				<a href="/">
+					<img src="/images/cloudvend.png" alt="CloudVend Logo" />
+				</a>
+			</figure>
+	
+			<form action="/register" method="POST">
+				<input type="input" name="username" placeholder="name">
+				<input type="password" name="password" placeholder="password">
+				<input type="input" name="email" placeholder="email">
+				<input type="input" name="city" placeholder="city">
+				
+				<button type="submit" value="register" class="button-styling">Register</button>
+			</form>
+
+			<h2>Already have an account? <a href="/login">Sign In</a></h2>
 		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="username" placeholder="name">
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="password" name="password" placeholder="password">	
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="city" placeholder="city">
-		</div>
-		<button type="submit" class="btn btn-success form-control">Register</button>
 	</div>
-</form>
+</section>
 
-<%- include("./partials/footer") %>
+<%- include("partials/footer") %>
