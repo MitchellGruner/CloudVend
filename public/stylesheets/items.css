@@ -1,0 +1,109 @@
+/* display items */
+main section#display-items.display-items-container,
+main section#display-items.display-items-container div div,
+main section#display-items.display-items-container div div > *,
+main section#display-items.display-items-container div div div,
+main section#display-items.display-items-container div div div > * {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+main section#display-items.display-items-container > div,
+main section#display-items.display-items-container div div div.container div {
+    display: flex;
+    flex-wrap: wrap;
+}
+main section#display-items.display-items-container > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 1em;
+    flex-basis: 100%;
+    margin: 1.1em 0.81em;
+}
+main section#display-items.display-items-container div div div.category-container {
+    background-color: #0F4C81;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    padding: 0.81em 1em;
+    width: 100%;
+}
+main section#display-items.display-items-container div div div.category-container h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+main section#display-items.display-items-container div div div.category-container h1 span {
+    background-size: 100% 15%;
+	background-repeat: repeat-x;
+	background-position: left 0% bottom 10%;
+	background-image: linear-gradient(179deg,#FFF 0%, #FFF 50%, transparent 54%, transparent 100%);
+}
+main section#display-items.display-items-container div div div div > * {
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-basis: 100%;
+}
+main section#display-items.display-items-container div div div div h2 {
+    color: #0F4C81;
+    font-weight: bolder;
+    font-size: 1.3em;
+    margin-bottom: 0.1em;
+}
+main section#display-items.display-items-container div div div div h2 span {
+    font-weight: bolder;
+    background-size: 100% 15%;
+	background-repeat: repeat-x;
+	background-position: left 0% bottom 10%;
+	background-image: linear-gradient(179deg,#0F4C81 0%, #0F4C81 50%, transparent 54%, transparent 100%);
+}
+main section#display-items.display-items-container div div div div span.price {
+    color:#4CAE4C;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+}
+main section#display-items.display-items-container div div div.container {
+    border-top: 1px solid #1E1E1E;
+    padding: 1.1em 1em;
+}
+main section#display-items.display-items-container div div div.container > * {
+    text-align: left;
+}
+main section#display-items.display-items-container div div div.container div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main section#display-items.display-items-container div div div.container h3 {
+    color: #1E1E1E;
+    font-weight: bolder;
+    font-size: 0.9em;
+}
+main section#display-items.display-items-container div div div.container p {
+    color: #1E1E1E;
+    font-style: italic;
+    margin: 1.2em auto 1.4em;
+    font-size: 1em;
+}
+main section#display-items.display-items-container div div div.container h4 {
+    color: #1E1E1E;
+    font-weight: bolder;
+    font-size: 1em;
+}
+main section#display-items.display-items-container div div div.container h4 span {
+    color:#0F4C81;
+    font-weight: bolder;
+    font-style: italic;
+}
+main section#display-items.display-items-container div div div.container hr {
+    border: none;
+    height: 0.05em;
+    background-color: #1E1E1E;
+    margin: 0.1em auto 0.81em;
+}
