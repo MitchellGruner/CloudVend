@@ -15,3 +15,8 @@ main figure img {
 main a {
 	text-decoration: none;
 }
+main .container {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	max-width: 1440px !important;
+}
