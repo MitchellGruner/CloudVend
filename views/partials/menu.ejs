@@ -1,0 +1,31 @@
+<div id="menu-container" class="container-fluid">
+    <div>
+        <div class="menu-div">
+            <% if (currentUser) { %><h1>Welcome, <span><%=currentUser.username%></span></h1> <% } %>
+
+            <div class="off-screen-menu">
+                <a href="/items/new">Create a New Item</a>
+                <a href="/user">Go to Profiles Page</a>
+                <a href="/items/all">View all Items</a>
+                <% if (currentUser.city) { %>
+                    <a href="/items/city">Items From <%=currentUser.city%></a>
+                <% } %>
+                <a href="/">Home</a>
+
+                <% if (currentUser) { %>
+                    <li><a href="/logout">Log out</a></li>
+                <% } else { %>
+                    <a href="/login">Login</a>
+                <% } %>
+            </div>
+
+            <nav>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
