@@ -1,0 +1,107 @@
+/* menu container */
+main div#menu-container.container-fluid {
+    display: block;
+    margin: auto;
+    padding-left: 0em;
+    padding-right: 0em;
+}
+main div#menu-container.container-fluid > div {
+    position: relative;
+}
+main div#menu-container.container-fluid > div div:first-of-type {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main div#menu-container.container-fluid > div div:first-of-type {
+    background-color: #0F4C81;
+    padding: 0.5em 1.2em;
+}
+main div#menu-container.container-fluid > div div:first-of-type > * {
+    color: #FFF;
+}
+main div#menu-container.container-fluid > div div:first-of-type h1 {
+    font-style: italic;
+    margin: auto 0em;
+    font-size: 1.1em;
+}
+main div#menu-container.container-fluid > div div:first-of-type h1 span {
+    font-weight: bolder;
+    background-size: 100% 15%;
+	background-repeat: repeat-x;
+	background-position: left 0% bottom 10%;
+    background-image: linear-gradient(179deg,#FFF 0%, #FFF 50%, transparent 54%, transparent 100%);
+}
+main div#menu-container.container-fluid > div div:first-of-type a {
+    color:#FFF;
+    font-weight: bolder;
+    font-size: 0.9em;
+    margin: 0.2em 0em;
+}
+main div#menu-container.container-fluid div div#menu-collapse {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+main div#menu-container.container-fluid div div div.off-screen-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    max-width: 767px;
+    right: -767px;
+    border-bottom: 2px solid #fff;
+    border-top: 2px solid #fff;
+    background-color: #1E1E1E;
+    font-size: 1.2em;
+    transition: 0.3s ease-in-out;
+    padding: 0.81em 1.4em;
+}
+main div#menu-container.container-fluid div div div.off-screen-menu.active {
+    right: 0;
+}
+main div#menu-container.container-fluid div div nav {
+    display: flex;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu {
+    height: 3.7em;
+    width: 3.7em;
+    margin-left: auto;
+    position: relative;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease-in-out;
+    background-color: #FFF;
+    border-radius: 1em;
+    height: 0.35em;
+    width: 80%;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu span:nth-child(1) {
+    top: 25%;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu span:nth-child(3) {
+    top: 75%;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
