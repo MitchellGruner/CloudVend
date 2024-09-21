@@ -2,7 +2,9 @@
 
 <!-- display items -->
 <section id="display-items" class="display-items-container container-fluid">
-    <div class="container">
+	<%- include("../partials/menu") %>
+
+    <div class="display-items-container-div container">
         <% items.forEach((item) => { %>
             <div>
                 <div class="category-container">
