@@ -130,7 +130,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
 
 @media (min-width: 400px) {
     main section#display-items.display-items-container > div:nth-child(2) {
-        margin: 1.1em auto 2.4em;
+        margin: 5.8em auto 2.4em;
     }
     main section#display-items.display-items-container > div:nth-child(2) > div {
         /* flex-basis: 100%; */
@@ -172,7 +172,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
 }
 @media (min-width: 576px) {
     main section#display-items.display-items-container > div:nth-child(2) {
-        margin: 1.2em auto 2.6em;
+        margin: 6.8em auto 2.8em;
     }
     main section#display-items.display-items-container > div:nth-child(2) > div {
         /* flex-basis: 100%; */
