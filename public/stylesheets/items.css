@@ -214,7 +214,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
 }
 @media (min-width: 768px) {
     main section#display-items.display-items-container > div:nth-child(2) {
-        margin: 1.1em 3.2em 2.4em;
+        margin: 6.1em 3.2em 2.4em;
     }
     main section#display-items.display-items-container > div:nth-child(2) > div {
         flex-basis: 44%;
@@ -255,7 +255,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
 }
 @media (min-width: 992px) {
     main section#display-items.display-items-container > div:nth-child(2) {
-        margin: 1.2em 0em 2.6em;
+        margin: 6.8em 0em 2.6em;
         max-width: 70%;
         float: right;
     }

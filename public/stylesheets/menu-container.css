@@ -62,8 +62,8 @@ main div#menu-container.container-fluid div div div.off-screen-menu {
     z-index: 1;
     width: 100%;
     top: 0;
-    max-width: 768px;
-    right: -768px;
+    max-width: 992px;
+    right: -992px;
     border-bottom: 2px solid #fff;
     border-top: 2px solid #fff;
     background-color: #1E1E1E;
@@ -141,5 +141,39 @@ main div#menu-container.container-fluid div div div.off-screen-menu div {
     }
     main div#menu-container.container-fluid div div div.off-screen-menu div {
         margin: 1.1em 0em 0em;
+    }
+}
+@media (min-width: 576px) {
+    /* menu container */
+    main div#menu-container.container-fluid > div div.menu-div {
+        padding: 0.61em 1.4em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div h1 {
+        font-size: 1.3em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div a.off-screen-menu-link {
+        margin: 0.24em 0em;
+    }
+    main div#menu-container.container-fluid div div div.off-screen-menu {
+        padding: 1.2em 3.5em;
+    }
+    main div#menu-container.container-fluid div div nav div.hamburger-menu {
+        height: 4.2em;
+        width: 4.2em;
+    }
+    main div#menu-container.container-fluid div div nav div.hamburger-menu span {
+        height: 0.42em;
+    }
+    main div#menu-container.container-fluid div div div.off-screen-menu div {
+        margin: 1.2em 0em 0em;
+    }
+}
+@media (min-width: 992px) {
+    main div#menu-container.container-fluid > div div.menu-div {
+        padding: 1.61em 2.4em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div nav,
+    main div#menu-container.container-fluid div div div.off-screen-menu {
+        display: none;
     }
 }
