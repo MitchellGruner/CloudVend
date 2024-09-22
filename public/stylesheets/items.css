@@ -10,13 +10,18 @@ main section#display-items.display-items-container div:nth-child(2) div div > * 
     text-align: center;
 }
 main section#display-items.display-items-container > div:nth-child(2),
+main section#display-items.display-items-container > div:nth-child(2) > div,
 main section#display-items.display-items-container div:nth-child(2) div div.container div,
 main section#display-items.display-items-container div:nth-child(2) div div.container div {
     display: flex;
 }
 main section#display-items.display-items-container > div:nth-child(2),
+main section#display-items.display-items-container > div:nth-child(2) > div,
 main section#display-items.display-items-container div:nth-child(2) div div.container div {
     flex-wrap: wrap;
+}
+main section#display-items.display-items-container > div:nth-child(2) article {
+    display: none;
 }
 main section#display-items.display-items-container {
     padding-left: 0em;
@@ -26,6 +31,9 @@ main section#display-items.display-items-container > div:nth-child(2) {
     margin: 5.2em auto 2.2em;
 }
 main section#display-items.display-items-container > div:nth-child(2) > div {
+    flex-basis: 100%;
+}
+main section#display-items.display-items-container > div:nth-child(2) > div > div {
     display: block;
     background-color: #FFF;
     box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
@@ -43,6 +51,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cate
 main section#display-items.display-items-container div:nth-child(2) div div.category-container h1 {
     color: #fff;
     font-weight: 500;
+    text-align: center;
     font-size: 1.1em;
 }
 main section#display-items.display-items-container div:nth-child(2) div div.category-container h1 span,
@@ -132,7 +141,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     main section#display-items.display-items-container > div:nth-child(2) {
         margin: 5.8em auto 2.4em;
     }
-    main section#display-items.display-items-container > div:nth-child(2) > div {
+    main section#display-items.display-items-container > div:nth-child(2) > div > div {
         /* flex-basis: 100%; */
         margin: 1.2em 1.9em;
     }
@@ -174,7 +183,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     main section#display-items.display-items-container > div:nth-child(2) {
         margin: 6.8em auto 2.8em;
     }
-    main section#display-items.display-items-container > div:nth-child(2) > div {
+    main section#display-items.display-items-container > div:nth-child(2) > div > div {
         /* flex-basis: 100%; */
         margin: 1.3em 6.1em;
     }
@@ -216,7 +225,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     main section#display-items.display-items-container > div:nth-child(2) {
         margin: 6.1em 3.2em 2.4em;
     }
-    main section#display-items.display-items-container > div:nth-child(2) > div {
+    main section#display-items.display-items-container > div:nth-child(2) > div > div {
         flex-basis: 44%;
         margin: 1.2em auto 1em;
     }
@@ -256,22 +265,63 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
 @media (min-width: 992px) {
     main section#display-items.display-items-container > div:nth-child(2) {
         margin: 6.8em 0em 2.6em;
-        max-width: 70%;
-        float: right;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) > div > div {
+        margin: 0em auto 2.4em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article,
+    main section#display-items.display-items-container > div:nth-child(2) article > * {
+        display: block;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article {
+        flex-basis: 30%;
+        width: 30%;
+        max-width: 380px;
+        height: fit-content;
+        border: 2px solid #0F4C81;
+        background-color: transparent;
+        position: fixed;
+        box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 1em;
+        padding: 1.1em 1.8em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article a,
+    main section#display-items.display-items-container > div:nth-child(2) article a:hover {
+        transition: 0.5s ease-in-out;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article a {
+        display: table;
+        color: #0F4C81;
+        font-weight: bolder;
+        text-align: left;
+        text-decoration: none;
+        font-size: 1.1em;
+        margin: 0.5em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article a:hover {
+        color: #1E1E1E;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) > div {
+        flex-basis: 68%;
+        margin-left: 27em;
     }
 }
 @media (min-width: 1200px) {
     main section#display-items.display-items-container > div:nth-child(2) {
-        margin: 1.3em 0em 2.8em;
-        max-width: 65%;
+        margin: 7.5em 0em 2.8em;
     }
-}
-@media (min-width: 1400px) {
-    main section#display-items.display-items-container > div:nth-child(2) {
-        margin: 1.4em 0em 3.1em;
+    main section#display-items.display-items-container > div:nth-child(2) > div > div {
+        margin: 0em auto 2.6em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article {
+        padding: 1.2em 2em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article a {
+        font-size: 1.2em;
+        margin: 0.55em;
     }
     main section#display-items.display-items-container > div:nth-child(2) > div {
-        margin: 1.3em auto 1.1em;
+        margin-left: 32.4em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.category-container {
         padding: 1em 1.2em;
@@ -299,7 +349,52 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
         font-size: 1.1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container hr {
-        height: 0.055em;
         margin: 0.11em auto 0.9em;
+    }
+}
+@media (min-width: 1400px) {
+    main section#display-items.display-items-container > div:nth-child(2) {
+        margin: 8.3em 0em 3.1em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) > div > div {
+        margin: 0em auto 3.1em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article {
+        padding: 1.4em 2.4em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article a {
+        font-size: 1.3em;
+        margin: 0.61em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) > div {
+        margin-left: 33.6em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div.category-container {
+        padding: 1.2em 1.4em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div.category-container h1 {
+        font-size: 1.5em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div h2 {
+        font-size: 1.7em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div span.price {
+        margin-bottom: 0.67em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div.container {
+        padding: 1.4em 1.3em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div.container h3 {
+        font-size: 1.2em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div.container p {
+        margin: 1.5em 0em 1.7em;
+        font-size: 1.3em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div.container h4 {
+        font-size: 1.3em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div.container hr {
+        margin: 0.13em auto 1.1em;
     }
 }
