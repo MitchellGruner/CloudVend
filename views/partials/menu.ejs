@@ -4,19 +4,21 @@
             <% if (currentUser) { %><h1>Welcome, <span><%=currentUser.username%></span></h1> <% } %>
 
             <div class="off-screen-menu">
-                <a href="/items/new">Create a New Item</a>
-                <a href="/user">Go to Profiles Page</a>
-                <a href="/items/all">View all Items</a>
+                <a href="/items/new" class="off-screen-menu-link">Create a New Item</a>
+                <a href="/user" class="off-screen-menu-link">Go to Profiles Page</a>
+                <a href="/items/all" class="off-screen-menu-link">View all Items</a>
                 <% if (currentUser.city) { %>
-                    <a href="/items/city">Items From <%=currentUser.city%></a>
+                    <a href="/items/city" class="off-screen-menu-link">View Items in <span><%=currentUser.city%></span></a>
                 <% } %>
-                <a href="/">Home</a>
+                <a href="/" class="off-screen-menu-link">Home</a>
 
-                <% if (currentUser) { %>
-                    <li><a href="/logout">Log out</a></li>
-                <% } else { %>
-                    <a href="/login">Login</a>
-                <% } %>
+                <div>
+                    <% if (currentUser) { %>
+                        <a href="/logout">Log out</a>
+                    <% } else { %>
+                        <a href="/login">Login</a>
+                    <% } %>
+                </div>
             </div>
 
             <nav>
