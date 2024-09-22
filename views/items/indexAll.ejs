@@ -5,31 +5,43 @@
 	<%- include("../partials/menu") %>
 
     <div class="display-items-container-div container">
-        <% items.forEach((item) => { %>
-            <div>
-                <div class="category-container">
-                    <h1><span>Category</span></h1>
-                </div>
-
-                <% if (item.image) { %>
-                    <figure>
-                        <img src="<%=item.image%>" />
-                    </figure>
+        <% if (items.length !== 0) { %>
+            <article>
+                <a href="/items/new" class="off-screen-menu-link">Create a New Item</a>
+                <a href="/user" class="off-screen-menu-link">Go to Profiles Page</a>
+                <a href="/items/all" class="off-screen-menu-link">View all Items</a>
+                <% if (currentUser.city) { %>
+                    <a href="/items/city" class="off-screen-menu-link">View Items in <span><%=currentUser.city%></span></a>
                 <% } %>
-                
-                <div class="container">
-                    <div>
-                        <h2><span><%=item.name%></span></h2>
-                        <span class="price">$<%=item.price%></span>
+                <a href="/" class="off-screen-menu-link">Home</a>
+            </article>
+        <% } %>
+
+        <div class="items-container">
+            <% items.forEach((item) => { %>
+                <div>
+                    <div class="category-container">
+                        <h1><span>Category</span></h1>
                     </div>
-					<h3><%=item.description%></h3>
-					<p>"<%=item.condition%>" - <%=item.author.username%></p>
-					<hr />
-                    <h4>Item available in <span><%=item.author.city%></span></h4>
+    
+                    <% if (item.image) { %>
+                        <figure>
+                            <img src="<%=item.image%>" />
+                        </figure>
+                    <% } %>
+                    
+                    <div class="container">
+                        <div>
+                            <h2><span><%=item.name%></span></h2>
+                            <span class="price">$<%=item.price%></span>
+                        </div>
+                        <h3><%=item.description%></h3>
+                        <p>"<%=item.condition%>" - <%=item.author.username%></p>
+                        <hr />
+                        <h4>Item available in <span><%=item.author.city%></span></h4>
+                    </div>
                 </div>
-            </div>
-        <% }); %>
+            <% }); %>
+        </div>
     </div>
 </section>
-
-
