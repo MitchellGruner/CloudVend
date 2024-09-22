@@ -18,5 +18,10 @@ main a {
 main .container {
 	margin-left: auto !important;
 	margin-right: auto !important;
-	max-width: 1440px !important;
+	width: 100%;
+}
+@media (min-width: 1400px) {
+	main .container {
+		max-width: 1440px !important;
+	}
 }
