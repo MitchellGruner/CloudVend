@@ -7,13 +7,13 @@
     <div class="display-items-container-div container">
         <% if (items.length !== 0) { %>
             <article>
-                <a href="/items/new" class="off-screen-menu-link">Create a New Item</a>
-                <a href="/user" class="off-screen-menu-link">Go to Profiles Page</a>
-                <a href="/items/all" class="off-screen-menu-link">View all Items</a>
+                <a href="/items/new">Create a New Item</a>
+                <a href="/user">Go to Profiles Page</a>
+                <a href="/items/all">View all Items</a>
                 <% if (currentUser.city) { %>
-                    <a href="/items/city" class="off-screen-menu-link">View Items in <span><%=currentUser.city%></span></a>
+                    <a href="/items/city">View Items in <%=currentUser.city%></a>
                 <% } %>
-                <a href="/" class="off-screen-menu-link">Home</a>
+                <a href="/">Home</a>
             </article>
         <% } %>
 
