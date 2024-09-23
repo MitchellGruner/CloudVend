@@ -11,13 +11,14 @@ main section#display-items.display-items-container div:nth-child(2) div div > * 
 }
 main section#display-items.display-items-container > div:nth-child(2),
 main section#display-items.display-items-container > div:nth-child(2) > div,
-main section#display-items.display-items-container div:nth-child(2) div div.container div,
-main section#display-items.display-items-container div:nth-child(2) div div.container div {
+main section#display-items.display-items-container div:nth-child(2) div div.container div:first-of-type,
+main section#display-items.display-items-container div:nth-child(2) div div.container div:last-of-type {
     display: flex;
 }
 main section#display-items.display-items-container > div:nth-child(2),
 main section#display-items.display-items-container > div:nth-child(2) > div,
-main section#display-items.display-items-container div:nth-child(2) div div.container div {
+main section#display-items.display-items-container div:nth-child(2) div div.container div:first-of-type,
+main section#display-items.display-items-container div:nth-child(2) div div.container div:last-of-type {
     flex-wrap: wrap;
 }
 main section#display-items.display-items-container > div:nth-child(2) article {
@@ -40,6 +41,9 @@ main section#display-items.display-items-container > div:nth-child(2) > div > di
     border-radius: 1em;
     flex-basis: 100%;
     margin: 1.1em 0.81em;
+}
+main section#display-items.display-items-container div:nth-child(2) div {
+    position: relative;
 }
 main section#display-items.display-items-container div:nth-child(2) div div.category-container {
     background-color: #0F4C81;
@@ -103,16 +107,36 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
 main section#display-items.display-items-container div:nth-child(2) div div.container > * {
     text-align: left;
 }
-main section#display-items.display-items-container div:nth-child(2) div div.container div,
+main section#display-items.display-items-container div:nth-child(2) div div.container div:first-of-type,
 main section#display-items.display-items-container div:nth-child(2) div div.container h3,
 main section#display-items.display-items-container div:nth-child(2) div div.container p,
 main section#display-items.display-items-container div:nth-child(2) div div.container h4 {
     margin: initial;
 }
-main section#display-items.display-items-container div:nth-child(2) div div.container div {
+main section#display-items.display-items-container div:nth-child(2) div div.container div:first-of-type {
     justify-content: space-between;
     align-items: flex-start;
     text-align: left;
+}
+main section#display-items.display-items-container div:nth-child(2) div div.container div:last-of-type {
+    margin: 1.2em auto 1em;
+}
+main section#display-items.display-items-container div:nth-child(2) div a.view-more-btn {
+    position: absolute;
+    bottom: 0;
+    flex-basis: 100%;
+    background-color: #0F4C81;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: bolder;
+    margin: auto;
+    text-align: center;
+    border-radius: 0em;
+    padding: 0.5em 1.2em;
+    margin-top: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    width: 100%;
 }
 main section#display-items.display-items-container div:nth-child(2) div div.container h3 {
     color: #1E1E1E;
@@ -126,6 +150,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
 main section#display-items.display-items-container div:nth-child(2) div div.container h4 {
     color: #1E1E1E;
     font-size: 1em;
+    padding-bottom: 2.5em;
 }
 main section#display-items.display-items-container div:nth-child(2) div div.container h4 span {
     color:#0F4C81;
@@ -142,7 +167,6 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
         margin: 5.8em auto 2.4em;
     }
     main section#display-items.display-items-container > div:nth-child(2) > div > div {
-        /* flex-basis: 100%; */
         margin: 1.2em 1.9em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.category-container {
@@ -150,9 +174,6 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     }
     main section#display-items.display-items-container div:nth-child(2) div div.category-container h1 {
         font-size: 1.2em;
-    }
-    main section#display-items.display-items-container div:nth-child(2) div div div > * {
-        /* flex-basis: 100%; */
     }
     main section#display-items.display-items-container div:nth-child(2) div div div h2 {
         font-size: 1.4em;
@@ -173,10 +194,16 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4 {
         font-size: 1.1em;
+        padding-bottom: 2.7em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container hr {
         height: 0.055em;
         margin: 0.11em auto 0.9em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div a.view-more-btn {
+        font-size: 1em;
+        padding: 0.5em 1.3em;
+        margin-top: 1.1em;
     }
 }
 @media (min-width: 576px) {
@@ -184,7 +211,6 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
         margin: 6.8em auto 2.8em;
     }
     main section#display-items.display-items-container > div:nth-child(2) > div > div {
-        /* flex-basis: 100%; */
         margin: 1.3em 6.1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.category-container {
@@ -192,9 +218,6 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     }
     main section#display-items.display-items-container div:nth-child(2) div div.category-container h1 {
         font-size: 1.3em;
-    }
-    main section#display-items.display-items-container div:nth-child(2) div div div > * {
-        /* flex-basis: 100%; */
     }
     main section#display-items.display-items-container div:nth-child(2) div div div h2 {
         font-size: 1.5em;
@@ -215,6 +238,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4 {
         font-size: 1.2em;
+        padding-bottom: 3em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container hr {
         height: 0.061em;
@@ -235,9 +259,6 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     main section#display-items.display-items-container div:nth-child(2) div div.category-container h1 {
         font-size: 1.2em;
     }
-    main section#display-items.display-items-container div:nth-child(2) div div div > * {
-        /* flex-basis: 100%; */
-    }
     main section#display-items.display-items-container div:nth-child(2) div div div h2 {
         font-size: 1.4em;
     }
@@ -256,6 +277,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4 {
         font-size: 1em;
+        padding-bottom: 3.3em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container hr {
         height: 0.05em;
@@ -305,6 +327,16 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
         flex-basis: 68%;
         margin-left: 27em;
     }
+    main section#display-items.display-items-container div:nth-child(2) div a.view-more-btn {
+        text-decoration: none;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div a.view-more-btn,
+    main section#display-items.display-items-container div:nth-child(2) div a.view-more-btn:hover {
+        transition: 0.5s ease-in-out;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div a.view-more-btn:hover {
+        background-color: #1E1E1E;
+    }
 }
 @media (min-width: 1200px) {
     main section#display-items.display-items-container > div:nth-child(2) {
@@ -336,7 +368,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
         margin-bottom: 0.55em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container {
-        padding: 1.2em 1.1em;
+        padding: 1.2em 1.1em 3.8em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h3 {
         font-size: 1em;
@@ -382,7 +414,7 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
         margin-bottom: 0.67em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container {
-        padding: 1.4em 1.3em;
+        padding: 1.4em 1.3em 4.2em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h3 {
         font-size: 1.2em;
@@ -393,8 +425,14 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4 {
         font-size: 1.3em;
+        padding-bottom: 1.4em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container hr {
         margin: 0.13em auto 1.1em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div a.view-more-btn {
+        font-size: 1.2em;
+        padding: 0.61em 1.5em;
+        margin-top: 1.2em;
     }
 }
