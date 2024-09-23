@@ -37,15 +37,15 @@ router.post("/items", (req, res) => {
 	var name = req.body.name;
 	var image = req.body.image;
 	var price = req.body.price;
-	var description = req.body.description;
 	var condition = req.body.condition;
+	var description = req.body.description;
 	var author = {
 		id: req.user._id,
 		username: req.user.username,
 		city: req.user.city,
 		image: req.user.image
 	};
-	var newItem = {name: name, image: image, price: price, description: description, condition: condition, author: author};
+	var newItem = {name: name, image: image, price: price, condition: condition, description: description, author: author};
 	Items.create(newItem, (err, items) => {
 		if(err){
 			console.log(err);

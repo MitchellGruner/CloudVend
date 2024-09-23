@@ -35,11 +35,13 @@
                             <h2><span><%=item.name%></span></h2>
                             <span class="price">$<%=item.price%></span>
                         </div>
-                        <h3><%=item.description%></h3>
-                        <p>"<%=item.condition%>" - <%=item.author.username%></p>
+                        <h3><%=item.condition%></h3>
+                        <p>"<%=item.description%>" - <%=item.author.username%></p>
                         <hr />
                         <h4>Item available in <span><%=item.author.city%></span></h4>
                     </div>
+
+                    <a href="../items/<%=item._id%>" class="view-more-btn">View More</a>
                 </div>
             <% }); %>
         </div>
