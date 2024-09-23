@@ -1,84 +1,49 @@
 <%- include("../partials/header") %>
-<div class="menu">
-	<ul class="list-group">
-		<li class="list-group-item"><p>Welcome, <%=currentUser.username%></p></li>
-  		<li class="list-group-item"><p><a href="/items/new">Create a New Item</a></p></li>
-		<li class="list-group-item"><p><a href="/user">Go to Profiles Page</a></p></li>
-		<li class="list-group-item"><p><a href="/items/all">View all Items</a></p></li>
-		<li class="list-group-item"><p><a href="#"></a>Items From <%=currentUser.city%></p></li>
- 		<li class="list-group-item"><p><a href="/">Go Back</a></p></li>
-	</ul>
-</div>
-<div class="container">
-	<div class="row text-center">
-		<div class="col-md-9">
-			<%items.forEach((item) => { %>
-				<div class="center">
-					<div class="box">
-						<%if(currentUser.city == item.author.city){%>
-							<%if(!item.image){%>
-							<div class="caption-full">
-							<h4 class="pull-right">$<%=item.price%></h4>
-							<div class="align left">
-								<h4><a><%=item.name%></a></h4>
-								<h5>Created by <strong><%=item.author.username%></strong></h5>
-								<p>Condition is <%=item.condition%></p>
-								<p><%=item.description%></p>
-									<div class="btn-group btn-group-justified" role="group">
-										<%if(currentUser && item.author.id.equals(currentUser._id)){%>
-											<div class="btn-group" role="group">
-												<button type="button" class="btn btn-sm btn-info btn-default"><a 																	href="items/<%=item._id%>"><h6 id="white">View More</h6></a></button>
-											</div>
-  										<div class="btn-group" role="group">
-											<button type="button" class="btn btn-sm btn-success btn-default"><a 																href="items/<%=item._id%>/edit"><h6 id="white">Edit</h6></a></button>
-  										</div>
-  										<div class="btn-group" role="group">
-											<button type="button" class="btn btn-sm btn-danger btn-default"><a 																	href="items/<%=item._id%>/delete"><h6 id="white">Delete</h6></a></button>
-  										</div>
-										<%} else {%>
-										<div>
-											<button type="button" class="btn btn-sm btn-info btn-default"><a 																	href="items/<%=item._id%>"><h6 id="white">View More</h6></a></button>
-										</div>
-										<%}%>
-									</div>
-								<button class="btn btn-md btn-primary btn-block"><a href="/items/<%=item._id%>/comments/new"><h6 id="white">Message</h6></a></button>
+
+<!-- display items -->
+<section id="display-items" class="display-items-container container-fluid">
+	<%- include("../partials/menu") %>
+
+    <div class="display-items-container-div container">
+        <% if (items.length !== 0) { %>
+            <article>
+                <a href="/items/new">Create a New Item</a>
+                <a href="/user">Go to Profiles Page</a>
+                <a href="/items/all">View all Items</a>
+                <% if (currentUser.city) { %>
+                    <a href="/items/city">View Items in <%=currentUser.city%></a>
+                <% } %>
+                <a href="/">Home</a>
+            </article>
+        <% } %>
+
+        <div class="items-container">
+            <% items.forEach((item) => { %>
+				<% if (currentUser.city == item.author.city) {%>
+					<div>
+						<div class="category-container">
+							<h1><span>Category</span></h1>
 						</div>
-						<%} else {%>
-						<img class="img-responsive containment large" src="<%=item.image%>"/>
-							<div class="caption-full">
-							<h4 class="pull-right">$<%=item.price%></h4>
-							<div class="align left">
-								<h4><a><%=item.name%></a></h4>
-								<h5>Created by <strong><%=item.author.username%></strong></h5>
-								<p>Condition is <%=item.condition%></p>
-								<p><%=item.description%></p>
-									<div class="btn-group btn-group-justified" role="group">
-										<%if(currentUser && item.author.id.equals(currentUser._id)){%>
-											<div class="btn-group" role="group">
-												<button type="button" class="btn btn-sm btn-info btn-default"><a 																	href="items/<%=item._id%>"><h6 id="white">View More</h6></a></button>
-											</div>
-  										<div class="btn-group" role="group">
-											<button type="button" class="btn btn-sm btn-success btn-default"><a 																href="items/<%=item._id%>/edit"><h6 id="white">Edit</h6></a></button>
-  										</div>
-  										<div class="btn-group" role="group">
-											<button type="button" class="btn btn-sm btn-danger btn-default"><a 																	href="items/<%=item._id%>/delete"><h6 id="white">Delete</h6></a></button>
-  										</div>
-										<%} else {%>
-										<div>
-											<button type="button" class="btn btn-sm btn-info btn-default"><a 																	href="items/<%=item._id%>"><h6 id="white">View More</h6></a></button>
-										</div>
-										<%}%>
-						<%}%>
-					</div>
-								<button class="btn btn-md btn-primary btn-block"><a href="/items/<%=item._id%>/comments/new"><h6 id="white">Message</h6></a></button>
+		
+						<% if (item.image) { %>
+							<figure>
+								<img src="<%=item.image%>" />
+							</figure>
+						<% } %>
+						
+						<div class="container">
+							<div>
+								<h2><span><%=item.name%></span></h2>
+								<span class="price">$<%=item.price%></span>
 							</div>
+							<h3><%=item.condition%></h3>
+							<p>"<%=item.description%>" - <%=item.author.username%></p>
+							<hr />
+							<h4>Item available in <span><%=item.author.city%></span></h4>
 						</div>
-						<br><br><br>
-						<hr>
-						<%}%>
 					</div>
-				</div>
-				<%});%>
-			</div>
-		</div>
-</div>
+				<% } %>
+            <% }); %>
+        </div>
+    </div>
+</section>
