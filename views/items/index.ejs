@@ -26,9 +26,26 @@
 						</div>
 		
 						<% if (item.image) { %>
-							<figure>
-								<img src="<%=item.image%>" />
-							</figure>
+							<div class="image-container">
+								<figure>
+									<img src="<%=item.image%>" />
+								</figure>
+		
+								<% if (currentUser && item.author.id.equals(currentUser._id)) {%>
+									<div>
+										<a href="../items/<%=item._id%>/edit">
+											<figure>
+												<img src="/images/edit-icon.png" alt="Edit Icon" />
+											</figure>
+										</a>
+										<a href="../items/<%=item._id%>/delete">
+											<figure>
+												<img src="/images/trash-icon.png" alt="Trash Icon" />
+											</figure>
+										</a>
+									</div>
+								<% } %>
+							</div>
 						<% } %>
 						
 						<div class="container">
@@ -41,6 +58,8 @@
 							<hr />
 							<h4>Item available in <span><%=item.author.city%></span></h4>
 						</div>
+
+						<a href="../items/<%=item._id%>" class="view-more-btn">View More</a>
 					</div>
 				<% } %>
             <% }); %>
