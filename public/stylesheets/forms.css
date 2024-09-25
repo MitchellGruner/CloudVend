@@ -1,0 +1,173 @@
+/* form styling */
+main section.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+    background-color: rgba(240, 240, 240, 0.9);
+}
+main section.form-container div.body-container-items-forms h1 {
+    text-align: center;
+    color: #0F4C81;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+main section.form-container div.body-container-items-forms h1 span {
+    font-weight: bolder;
+    background-size: 100% 15%;
+	background-repeat: repeat-x;
+	background-position: left 0% bottom 10%;
+	background-image: linear-gradient(179deg,#0F4C81 0%, #0F4C81 50%, transparent 54%, transparent 100%);
+}
+main section.form-container div.body-container-items-forms form {
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 0.5em auto auto;
+	width: 95%;
+}
+main section.form-container div.body-container-items-forms form input,
+main section.form-container div.body-container-items-forms form textarea {
+	width: 100%;
+    box-sizing: border-box;
+    background-color: #fff !important;
+    border: 2px solid #0F4C81;
+    color: #0F4C81;
+    border-radius: 0.5em;
+    background-color: transparent;
+	transition: 0.5s;
+    font-size: 0.95em;
+	padding: 0.73em 1em;
+    margin: 0.5em auto;
+}
+main section.form-container div.body-container-items-forms form input::placeholder,
+main section.form-container div.body-container-items-forms form textarea::placeholder {
+    opacity: 0.8;
+    color: #0F4C81;
+}
+main section.form-container div.body-container-items-forms form input:focus,
+main section.form-container div.body-container-items-forms form textarea:focus {
+	border-color: #4CAF50;
+}
+main section.form-container div.body-container-items-forms form button,
+main section.form-container div.body-container-items-forms form button:hover,
+main section.form-container div.body-container-items-forms form a,
+main section.form-container div.body-container-items-forms form a:hover {
+    transition: 0.5s ease-in-out;
+}
+main section.form-container div.body-container-items-forms form button {
+    color: #F7F7F7;
+	text-decoration: none;
+	font-weight: bolder;
+    background-color: #5CB85C;
+	border: 1px solid #5CB85C;
+	width: 100%;
+    box-sizing: border-box;
+	padding: 0.45em 1em;
+	margin: 2.2em auto 0.5em;
+	border-radius: 0.5em;
+	font-size: 1em;
+}
+main section.form-container div.body-container-items-forms form button:hover {
+    background-color: #1E1E1E;
+    border: 1px solid #1E1E1E;
+}
+main section.form-container div.body-container-items-forms form a {
+    color: #0F4C81;
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+}
+main section.form-container div.body-container-items-forms form a:hover {
+    color: #1E1E1E;
+}
+
+@media (min-width: 400px) {
+    main section.form-container div.body-container-items-forms {
+        margin-top: 4em;
+        padding: 0em 3.2em;
+    }
+    main section.form-container div.body-container-items-forms h1 {
+        font-size: 1.6em;
+        margin-bottom: 1.1em;
+    }
+    main section.form-container div.body-container-items-forms form button {
+        padding: 0.5em 1.1em;
+        margin: 2.4em auto 0.55em;
+        font-size: 1.1em;
+    }
+    main section.form-container div.body-container-items-forms form a {
+        font-size: 1em;
+        margin-top: 0.55em;
+    }
+}
+@media (min-width: 576px) {
+    main section.form-container div.body-container-items-forms {
+        margin-top: 4.4em;
+        padding: 0em 5.5em;
+    }
+    main section.form-container div.body-container-items-forms h1 {
+        font-size: 1.7em;
+        margin-bottom: 1.2em;
+    }
+    main section.form-container div.body-container-items-forms form {
+        margin: 0.55em auto auto;
+    }
+    main section.form-container div.body-container-items-forms form input,
+    main section.form-container div.body-container-items-forms form textarea {
+        font-size: 1em;
+        padding: 0.81em 1.1em;
+        margin: 0.55em auto;
+    }
+    main section.form-container div.body-container-items-forms form button {
+        padding: 0.55em 1.2em;
+        margin: 2.6em auto 0.61em;
+        font-size: 1.2em;
+    }
+    main section.form-container div.body-container-items-forms form a {
+        font-size: 1.1em;
+        margin-top: 0.61em;
+    }
+}
+@media (min-width: 992px) {
+    main section.form-container div.body-container-items-forms {
+        margin-top: 4.8em;
+        padding: 0em 17.1em;
+    }
+}
+@media (min-width: 1200px) {
+    main section.form-container div.body-container-items-forms {
+        margin-top: 5.3em;
+        padding: 0em 25.1em;
+    }
+}
+@media (min-width: 1400px) {
+    main section.form-container div.body-container-items-forms {
+        margin-top: 4.8em;
+        padding: 0em 32.1em;
+    }
+    main section.form-container div.body-container-items-forms h1 {
+        font-size: 2em;
+        margin-bottom: 1.3em;
+    }
+    main section.form-container div.body-container-items-forms form {
+        margin: 0.61em auto auto;
+    }
+    main section.form-container div.body-container-items-forms form input,
+    main section.form-container div.body-container-items-forms form textarea {
+        font-size: 1.1em;
+        padding: 0.9em 1.2em;
+        margin: 0.61em auto;
+    }
+    main section.form-container div.body-container-items-forms form button {
+        padding: 0.61em 1.3em;
+        margin: 2.8em auto 0.67em;
+    }
+    main section.form-container div.body-container-items-forms form a {
+        font-size: 1.2em;
+        margin-top: 0.67em;
+    }
+}
