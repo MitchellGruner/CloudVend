@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const hamburgerMenu = document.querySelector(".hamburger-menu");
     const menuDiv = document.querySelector(".menu-div");
     const offScreenMenu = document.querySelector(".off-screen-menu");
-    const itemsContainer = document.querySelector(".display-items-container-div");
+    const itemsContainer = document.querySelector(".body-container-items-forms");
     const menuHeight = document.querySelector(".menu-div").offsetHeight;
 
     /* apply offset to hamburger items, based on height of nav */
