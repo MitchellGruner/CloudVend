@@ -1,24 +1,19 @@
-<%- include("../partials/header")%>
+<%- include("../partials/header") %>
+<%- include("../partials/menu") %>
 
-<form action="/items/<%=items._id%>/update/?_method=PUT" method="POST">
-	<div class="container form">
-		<h1 id="center">Edit <%=items.name%></h1>
-		<div class="spacing">
-			<input class="form-control" type="input" name="name" value="<%=items.name%>">
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="image" value="<%=items.image%>">
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="number" name="price" value="<%=items.price%>" min="0.01" step="0.01">
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="description" value="<%=items.description%>">	
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="condition" value="<%=items.condition%>">
-		</div>
+<section class="form-container">
+	<div class="body-container-items-forms container">
+		<h1><span>Edit <%= items.name %></span></h1>
 		
-		<button class="btn btn-success">Submit!</button>
-		<button class="btn btn-info"><a href="/items">Go Back</a></button>
+		<form action="/items/<%=items._id%>/update/?_method=PUT" method="POST">
+			<input type="input" name="name" value="<%=items.name%>">
+			<input type="input" name="image" value="<%=items.image%>">
+			<input type="number" name="price" value="<%=items.price%>" min="0.01" step="0.01">
+			<input type="input" name="condition" value="<%=items.condition%>">
+			<input type="input" name="description" value="<%=items.description%>">
+
+			<button type="submit">Submit!</button>
+			<a href="javascript:history.back()">Go Back</a>
+		</form>
 	</div>
+</section>
