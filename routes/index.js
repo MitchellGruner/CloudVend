@@ -27,7 +27,7 @@ router.post("/register", (req, res) => {
 				console.log(err);
 				return res.render("register");
 			} else {
-				passport.authenticate('local')(req, res, () => {
+				passport.authenticate("local")(req, res, () => {
 					res.redirect("items");
 				});
     		}
@@ -54,7 +54,7 @@ router.get("/logout", (req, res) => {
 
 // show login form.
 router.get("/items/login", (req, res) => {
-	res.render("/login");
+	res.render("login");
 });
 
 module.exports = router;

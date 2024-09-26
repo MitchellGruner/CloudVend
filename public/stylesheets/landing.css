@@ -1,43 +1,327 @@
-body {
+/* landing page styles */
+main {
 	background-image: url("https://images.unsplash.com/photo-1524813686514-a57563d77965?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80");
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
-
-.jumbotron {
-	float: right;
-	width: 25%;
-	margin-top: 5%;
-	overflow-wrap: break-word;
-  	align-items: center;
+main section#landing-page.container-fluid,
+main section#landing-page.container-fluid div,
+main section#landing-page.container-fluid div > div > *,
+main section#landing-page.container-fluid div > div figure img,
+main section#landing-page.container-fluid div > div form > * {
+	display: block;
+	margin: auto;
+	line-height: 1em;
 }
-
-.cloud {
-	font-family: 'Caveat', cursive;
-	padding: 0.4em;
+main section#landing-page {
+	height: 110vh;
 }
-
-#style {
-	font-size: 3vw;
+main section#landing-page.container-fluid div.container {
+	width: 100%;
+	padding-left: 0em;
+	padding-right: 0em;
+}
+main section#landing-page.container-fluid div > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
-	margin: 0 auto;
-}
-
-.container-fluid {
+	background-color: #F7F7F7;
+	border-radius: 1em;
+	padding: 1em 1.4em 1.2em;
+	margin: 0.81em auto;
 	width: 100%;
 }
-
-#center {
-	font-size: 1em;
-	float: left;
+main section#landing-page.container-fluid div > div figure {
+	margin: 1.2em auto 0.81em;
 }
-
-.center {
+main section#landing-page.container-fluid div > div figure img {
+	max-width: 80%;
+	height: auto;
+}
+main section#landing-page.container-fluid div > div h1 {
+	color: #0F7CF1;
+	font-weight: bolder;
+	font-size: 1.3em;
+}
+main section#landing-page.container-fluid div > div h1 span {
+	background-size: 100% 15%;
+	background-repeat: repeat-x;
+	background-position: left 0% bottom 10%;
+	background-image: linear-gradient(179deg,#0F7CF1 0%, #0F7CF1 50%, transparent 54%, transparent 100%);
+}
+main section#landing-page.container-fluid div > div p {
+	color: #1E1E1E;
+	margin: 1.2em auto 1.6em;
+	font-size: 1.1em;
+}
+main section#landing-page.container-fluid div > div h2 {
+	color: #0F7CF1;
+	font-weight: bolder;
+	font-size: 0.9em;
+	margin-top: 0.81em;
+}
+main section#landing-page.container-fluid div > div h2 a {
+	text-decoration: underline;
+	font-weight: bolder;
+}
+main section#landing-page.container-fluid div > div h2 a,
+main section#landing-page.container-fluid div > div h2 a:hover,
+main section#landing-page.container-fluid div > div .button-styling,
+main section#landing-page.container-fluid div > div .button-styling:hover {
+	transition: 0.5s ease-in-out;
+}
+main section#landing-page.container-fluid div > div h2 a:hover {
+	color:#4CAE4C;
+}
+main section#landing-page.container-fluid div > div .button-styling {
+	color: #F7F7F7;
+	text-decoration: none;
+	font-weight: bolder;
+	width: 100%;
+    box-sizing: border-box;
+	padding: 0.45em 1em;
+	margin: 0.5em auto;
+	border-radius: 0.5em;
+	font-size: 0.9em;
+}
+main section#landing-page.container-fluid div > div .button-styling:hover {
+	transform: translateY(-5px);
+}
+main section#landing-page.container-fluid div > div .button-styling:last-of-type {
+	background-color: #337AB7;
+	border: 1px solid #337AB7;
+}
+main section#landing-page.container-fluid div > div .button-styling:last-of-type:hover {
+	background-color: #286090;
+	border: 1px solid #286090;
+}
+main section#landing-page.container-fluid div > div .button-styling:first-of-type,
+main section#landing-page.container-fluid div > div button.button-styling {
+	background-color: #5CB85C;
+	border: 1px solid #5CB85C;
+}
+main section#landing-page.container-fluid div > div .button-styling:first-of-type:hover,
+main section#landing-page.container-fluid div > div button.button-styling:hover {
+	background-color: #4CAE4C;
+	border: 1px solid #4CAE4C;
+}
+main section#landing-page.container-fluid div > div form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
+	margin-top: 0.5em;
+	width: 100%;
+}
+main section#landing-page.container-fluid div > div form input {
+	width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #E3E3E4;
+    border-radius: 0.5em;
+    background-color: transparent;
+	transition: 0.5s;
+    font-size: 1em;
+	padding: 0.73em 1em;
+    margin: 0.5em auto;
+}
+main section#landing-page.container-fluid div > div form input:focus {
+	border-color: #4CAF50;
+}
+main section#landing-page.container-fluid div > div button.button-styling {
+	margin-top: 2.2em;
 }
 
-#auto {
-	width: auto;
-	margin: 0 auto;
-    display: block;
-	position:relative;
+@media (min-width: 400px) {
+	main section#landing-page.container-fluid div > div {
+		padding: 1.1em 1.5em 1.3em;
+		margin: 0.9em auto;
+		width: 90%;
+	}
+	main section#landing-page.container-fluid div > div figure {
+		margin: 1.3em auto 0.9em;
+	}
+	main section#landing-page.container-fluid div > div figure img {
+		max-width: 70%;
+	}
+	main section#landing-page.container-fluid div > div h1 {
+		font-size: 1.5em;
+	}
+	main section#landing-page.container-fluid div > div p {
+		margin: 1.3em auto 1.7em;
+		font-size: 1.2em;
+	}
+	main section#landing-page.container-fluid div > div .button-styling {
+		padding: 0.5em 1.1em;
+		margin: 0.55em auto;
+		font-size: 1em;
+	}
+}
+@media (min-width: 576px) {
+	main section#landing-page.container-fluid div > div {
+		padding: 1.2em 1.6em 1.4em;
+		margin: 1em auto;
+		width: 80%;
+	}
+	main section#landing-page.container-fluid div > div figure {
+		margin: 1.4em auto 1em;
+	}
+	main section#landing-page.container-fluid div > div figure img {
+		max-width: 60%;
+	}
+	main section#landing-page.container-fluid div > div h1 {
+		font-size: 1.8em;
+	}
+	main section#landing-page.container-fluid div > div p {
+		margin: 1.4em auto 1.8em;
+		font-size: 1.3em;
+	}
+	main section#landing-page.container-fluid div > div h2 {
+		font-size: 1em;
+		margin-top: 0.9em;
+	}
+	main section#landing-page.container-fluid div > div .button-styling {
+		padding: 0.55em 1.2em;
+		margin: 0.61em auto;
+		font-size: 1.1em;
+	}
+	main section#landing-page.container-fluid div > div form {
+		margin-top: 0.55em;
+	}
+	main section#landing-page.container-fluid div > div form input {
+		font-size: 1.1em;
+		padding: 0.81em 1.1em;
+		margin: 0.55em auto;
+	}
+	main section#landing-page.container-fluid div > div button.button-styling {
+		margin-top: 2.4em;
+	}
+}
+@media (min-width: 768px) {
+	main section#landing-page.container-fluid div > div {
+		padding: 1.1em 2.2em 1.3em;
+		margin: 0.9em auto;
+		width: 44%;
+		float: right;
+	}
+	main section#landing-page.container-fluid div > div figure {
+		margin: 1.3em auto 0.9em;
+	}
+	main section#landing-page.container-fluid div > div figure img {
+		max-width: 70%;
+	}
+	main section#landing-page.container-fluid div > div h1 {
+		font-size: 1.5em;
+	}
+	main section#landing-page.container-fluid div > div p {
+		margin: 1.3em auto 1.7em;
+		font-size: 1.2em;
+	}
+	main section#landing-page.container-fluid div > div h2 {
+		font-size: 0.9em;
+		margin-top: 0.81em;
+	}
+	main section#landing-page.container-fluid div > div .button-styling {
+		padding: 0.5em 1.1em;
+		margin: 0.55em auto;
+		font-size: 1em;
+	}
+}
+@media (min-width: 992px) {
+	main section#landing-page.container-fluid div > div {
+		padding: 1.2em 2.4em 1.4em;
+		margin: 1em auto;
+		width: 40%;
+	}
+	main section#landing-page.container-fluid div > div figure {
+		margin: 1.4em auto 1em;
+	}
+	main section#landing-page.container-fluid div > div figure img {
+		max-width: 65%;
+	}
+	main section#landing-page.container-fluid div > div h1 {
+		font-size: 1.9em;
+	}
+	main section#landing-page.container-fluid div > div p {
+		margin: 1.4em auto 1.8em;
+		font-size: 1.3em;
+	}
+	main section#landing-page.container-fluid div > div h2 {
+		font-size: 1em;
+		margin-top: 0.9em;
+	}
+	main section#landing-page.container-fluid div > div .button-styling {
+		padding: 0.55em 1.2em;
+		margin: 0.61em auto;
+		font-size: 1.1em;
+	}
+	main section#landing-page.container-fluid div > div form {
+		margin-top: 0.61em;
+	}
+	main section#landing-page.container-fluid div > div form input {
+		padding: 0.9em 1.2em;
+		margin: 0.61em auto;
+	}
+	main section#landing-page.container-fluid div > div button.button-styling {
+		margin-top: 2.6em;
+	}
+}
+@media (min-width: 1200px) {
+	main section#landing-page.container-fluid div > div {
+		padding: 1.3em 2.6em 1.5em;
+		margin: 1.6em 1.4em auto auto;
+		width: 33%;
+	}
+	main section#landing-page.container-fluid div > div figure {
+		margin: 1.8em auto 1.1em;
+	}
+	main section#landing-page.container-fluid div > div figure img {
+		max-width: 60%;
+	}
+	main section#landing-page.container-fluid div > div h1 {
+		font-size: 2em;
+	}
+	main section#landing-page.container-fluid div > div p {
+		margin: 1.5em auto 2em;
+		font-size: 1.4em;
+	}
+	main section#landing-page.container-fluid div > div h2 {
+		font-size: 1.1em;
+		margin-top: 1em;
+	}
+	main section#landing-page.container-fluid div > div .button-styling {
+		padding: 0.61em 1.3em;
+		margin: 0.67em auto;
+		font-size: 1.2em;
+	}
+}
+@media (min-width: 1400px) {
+	main section#landing-page.container-fluid div > div {
+		padding: 1.4em 2.8em 1.6em;
+		margin: 1.7em 1.5em auto auto;
+		width: 30%;
+	}
+	main section#landing-page.container-fluid div > div figure {
+		margin: 2em auto 1.2em;
+	}
+	main section#landing-page.container-fluid div > div h1 {
+		font-size: 2.1em;
+	}
+	main section#landing-page.container-fluid div > div p {
+		margin: 1.6em auto 2.2em;
+		font-size: 1.5em;
+	}
+	main section#landing-page.container-fluid div > div .button-styling {
+		padding: 0.67em 1.4em;
+		margin: 0.73em auto;
+		font-size: 1.3em;
+	}
+}
+@media (min-width: 1600px) {
+	main section#landing-page.container-fluid div.container {
+		max-width: 1660px;
+	}
 }

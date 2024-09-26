@@ -1,0 +1,253 @@
+/* menu container */
+main div#menu-container.container-fluid,
+main div#menu-container.container-fluid div div div.off-screen-menu div {
+    display: block;
+    margin: auto;
+}
+main div#menu-container.container-fluid {
+    padding-left: 0em;
+    padding-right: 0em;
+}
+main div#menu-container.container-fluid > div {
+    position: relative;
+}
+main div#menu-container.container-fluid > div div.menu-div {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #0F4C81;
+    padding: 0.5em 1.2em;
+}
+main div#menu-container.container-fluid > div div.menu-div article {
+    display: flex;
+    justify-content: space-between;
+}
+main div#menu-container.container-fluid > div div.menu-div article > div {
+    display: ruby;
+    margin: auto 0em;
+}
+main div#menu-container.container-fluid > div div.menu-div h1,
+main div#menu-container.container-fluid > div div.menu-div article a.log-out-link {
+    display: none;
+}
+main div#menu-container.container-fluid > div div.menu-div article a,
+main div#menu-container.container-fluid > div div.menu-div > * {
+    color: #FFF;
+}
+main div#menu-container.container-fluid > div div.menu-div article > div img {
+    max-width: 100px;
+}
+main div#menu-container.container-fluid > div div.menu-div h1 {
+    font-style: italic;
+    margin: auto 0em;
+    font-size: 1.1em;
+}
+main div#menu-container.container-fluid > div div.menu-div h1 span,
+main div#menu-container.container-fluid > div div.menu-div a.off-screen-menu-link,
+main div#menu-container.container-fluid div div div.off-screen-menu div a,
+main div#menu-container.container-fluid > div div.menu-div a.off-screen-menu-link span {
+    font-weight: bolder;
+}
+main div#menu-container.container-fluid > div div.menu-div h1 span,
+main div#menu-container.container-fluid > div div.menu-div a.off-screen-menu-link span {
+    background-size: 100% 15%;
+	background-repeat: repeat-x;
+	background-position: left 0% bottom 10%;
+    background-image: linear-gradient(179deg,#FFF 0%, #FFF 50%, transparent 54%, transparent 100%);
+}
+main div#menu-container.container-fluid > div div.menu-div a.off-screen-menu-link {
+    color:#FFF;
+    font-size: 0.9em;
+    margin: 0.2em 0em;
+}
+main div#menu-container.container-fluid div div#menu-collapse {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+main div#menu-container.container-fluid div div div.off-screen-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    max-width: 992px;
+    right: -992px;
+    border-bottom: 2px solid #fff;
+    border-top: 2px solid #fff;
+    background-color: #1E1E1E;
+    font-size: 1.2em;
+    transition: 0.3s ease-in-out;
+    padding: 1em 1.6em;
+}
+main div#menu-container.container-fluid div div div.off-screen-menu.active {
+    right: 0;
+}
+main div#menu-container.container-fluid div div nav {
+    display: flex;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu {
+    height: 3.7em;
+    width: 3.7em;
+    margin-left: auto;
+    position: relative;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease-in-out;
+    background-color: #FFF;
+    border-radius: 1em;
+    height: 0.35em;
+    width: 80%;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu span:nth-child(1) {
+    top: 25%;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu span:nth-child(3) {
+    top: 75%;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+main div#menu-container.container-fluid div div nav div.hamburger-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+main div#menu-container.container-fluid div div div.off-screen-menu div {
+    margin: 1em 0em 0em;
+}
+
+@media (min-width: 400px) {
+    /* menu container */
+    main div#menu-container.container-fluid > div div.menu-div {
+        padding: 0.61em 1.3em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div article > div a {
+        display: block;
+    }
+    main div#menu-container.container-fluid > div div.menu-div a.off-screen-menu-link {
+        font-size: 1em;
+        margin: 0.22em 0em;
+    }
+    main div#menu-container.container-fluid div div div.off-screen-menu {
+        font-size: 1.3em;
+        padding: 1.1em 3.2em;
+    }
+    main div#menu-container.container-fluid div div nav div.hamburger-menu {
+        height: 4em;
+        width: 4em;
+    }
+    main div#menu-container.container-fluid div div nav div.hamburger-menu span {
+        height: 0.38em;
+        width: 85%;
+    }
+    main div#menu-container.container-fluid div div div.off-screen-menu div {
+        margin: 1.1em 0em 0em;
+    }
+}
+@media (min-width: 576px) {
+    /* menu container */
+    main div#menu-container.container-fluid > div div.menu-div {
+        padding: 0.75em 1.4em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div a.off-screen-menu-link {
+        margin: 0.24em 0em;
+    }
+    main div#menu-container.container-fluid div div div.off-screen-menu {
+        padding: 1.2em 3.5em;
+    }
+    main div#menu-container.container-fluid div div nav div.hamburger-menu {
+        height: 4.2em;
+        width: 4.2em;
+    }
+    main div#menu-container.container-fluid div div nav div.hamburger-menu span {
+        height: 0.42em;
+    }
+    main div#menu-container.container-fluid div div div.off-screen-menu div {
+        margin: 1.2em 0em 0em;
+    }
+}
+@media (min-width: 768px) {
+    main div#menu-container.container-fluid > div div.menu-div h1 {
+        display: block;
+        font-size: 1.2em;
+        margin-left: 0.81em;
+    }
+}
+@media (min-width: 992px) {
+    main div#menu-container.container-fluid > div div.menu-div nav,
+    main div#menu-container.container-fluid div div div.off-screen-menu {
+        display: none;
+    }
+    main div#menu-container.container-fluid > div div.menu-div article {
+        width: 100%;
+    }
+    main div#menu-container.container-fluid > div div.menu-div article > div > h1 {
+        margin-left: 1em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div article a.log-out-link {
+        margin: auto 0em;
+        justify-content: center;
+        display: flex;
+    }
+    main div#menu-container.container-fluid > div div.menu-div article a,
+    main div#menu-container.container-fluid > div div.menu-div article a:hover {
+        transition: 0.5s ease-in-out;
+    }
+    main div#menu-container.container-fluid > div div.menu-div article a {
+        display: block;
+        font-weight: bolder;
+        text-decoration: none;
+        font-size: 1.1em;
+        margin: 0em auto;
+    }
+    main div#menu-container.container-fluid > div div.menu-div article a:hover{
+        color: #1E1E1E;
+    }
+    main div#menu-container.container-fluid > div div.menu-div {
+        padding: 1em 2.4em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div h1 {
+        font-size: 1.4em;
+    }
+}
+@media (min-width: 1200px) {
+    main div#menu-container.container-fluid > div div.menu-div {
+        padding: 1.2em 2.6em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div h1 {
+        font-size: 1.5em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div article a {
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 1400px) {
+    main div#menu-container.container-fluid > div div.menu-div {
+        padding: 1.3em 2.8em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div h1 {
+        font-size: 1.6em;
+    }
+    main div#menu-container.container-fluid > div div.menu-div article {
+        max-width: 1440px;
+        margin: auto;
+    }
+    main div#menu-container.container-fluid > div div.menu-div article a {
+        font-size: 1.2em;
+    }
+}

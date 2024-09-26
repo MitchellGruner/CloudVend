@@ -1,16 +1,25 @@
-<%- include("./partials/header") %>
+<%- include("partials/header") %>
+<%- include("partials/landingHeader") %>
 
-<form action="/login" method="POST">
-			<div class="container" id="form">
-				<div class="spacing">
-					<input class="form-control" type="text" name="username" placeholder="username">
-				</div>
-				<div class="spacing">
-					<input class="form-control" type="password" name="password" placeholder="password">
-				</div>
+<section id="landing-page" class="container-fluid">
+	<div class="container">
+		<div>
+			<figure>
+				<a href="/">
+					<img src="/images/cloudvend.png" alt="CloudVend Logo" />
+				</a>
+			</figure>
+	
+			<form action="/login" method="POST">
+				<input type="text" name="username" placeholder="username">
+				<input type="password" name="password" placeholder="password">
 				
-				<button type="submit" value="login" class="btn btn-success form-control">Login</button>
-			</div>
-		</form>	
+				<button type="submit" value="login" class="button-styling">Login</button>
+			</form>
 
-<%- include("./partials/footer") %>
+			<h2>Don't have an account? <a href="/register">Sign Up</a></h2>
+		</div>
+	</div>
+</section>
+
+<%- include("partials/footer") %>

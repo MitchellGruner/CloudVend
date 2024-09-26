@@ -1,0 +1,45 @@
+<div id="menu-container" class="container-fluid">
+    <div>
+        <div class="menu-div">
+            <article>
+                <% if (currentUser) { %>
+                    <div>
+                        <a href="/">
+                            <img src="/images/cloudvend.png" alt="CloudVend Logo" />
+                        </a>
+                        <h1>Welcome, <span><%=currentUser.username%></span></h1>
+                    </div>
+                    <a href="/logout" class="log-out-link">Log out</a>
+                <% } else { %>
+                    <a href="/login">Login</a>
+                <% } %>
+            </article>
+
+            <div class="off-screen-menu">
+                <a href="/items/new" class="off-screen-menu-link">Create a New Item</a>
+                <a href="/user" class="off-screen-menu-link">Go to Profiles Page</a>
+                <a href="/items/all" class="off-screen-menu-link">View all Items</a>
+                <% if (currentUser.city) { %>
+                    <a href="/items/city" class="off-screen-menu-link">View Items in <span><%=currentUser.city%></span></a>
+                <% } %>
+                <a href="/" class="off-screen-menu-link">Home</a>
+
+                <div>
+                    <% if (currentUser) { %>
+                        <a href="/logout">Log out</a>
+                    <% } else { %>
+                        <a href="/login">Login</a>
+                    <% } %>
+                </div>
+            </div>
+
+            <nav>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
