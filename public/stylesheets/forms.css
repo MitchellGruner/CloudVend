@@ -94,6 +94,10 @@ main section.form-container div.body-container-items-forms form h2 {
     margin: 0.81em 0em 0em;
 }
 
+main section#edit-container.form-container {
+    height: 100vh;
+}
+
 @media (min-width: 400px) {
     main section.form-container div.body-container-items-forms {
         margin-top: 4em;
