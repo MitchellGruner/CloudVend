@@ -3,7 +3,7 @@ main section.form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 110vh;
+    height: 100vh;
     background-color: rgba(240, 240, 240, 0.9);
 }
 main section.form-container div.body-container-items-forms h1 {
@@ -23,7 +23,7 @@ main section.form-container div.body-container-items-forms form {
     display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	text-align: center;
 	margin: 0.5em auto auto;
 	width: 95%;
@@ -79,10 +79,23 @@ main section.form-container div.body-container-items-forms form a {
     text-decoration: underline;
     font-weight: bolder;
     font-size: 0.9em;
-    margin-top: 0.5em;
+    margin: 0.5em auto 0em;
+}
+main section.form-container.edit-container div.body-container-items-forms {
+    margin-top: 4.8em;
 }
 main section.form-container div.body-container-items-forms form a:hover {
     color: #1E1E1E;
+}
+main section.form-container div.body-container-items-forms form h2 {
+    color: #0F4C81;
+    text-align: left;
+    font-size: 1em;
+    margin: 0.81em 0em 0em;
+}
+
+main section#edit-container.form-container {
+    height: 100vh;
 }
 
 @media (min-width: 400px) {
@@ -99,12 +112,19 @@ main section.form-container div.body-container-items-forms form a:hover {
         margin: 2.4em auto 0.55em;
         font-size: 1.1em;
     }
+    main section.form-container div.body-container-items-forms form h2 {
+        font-size: 1.1em;
+        margin: 0.9em 0em 0em;
+    }
     main section.form-container div.body-container-items-forms form a {
         font-size: 1em;
-        margin-top: 0.55em;
+        margin: 0.55em auto 0em;
     }
 }
 @media (min-width: 576px) {
+    main section.form-container {
+        height: 110vh;
+    }
     main section.form-container div.body-container-items-forms {
         margin-top: 4.4em;
         padding: 0em 5.5em;
@@ -127,9 +147,13 @@ main section.form-container div.body-container-items-forms form a:hover {
         margin: 2.6em auto 0.61em;
         font-size: 1.2em;
     }
+    main section.form-container div.body-container-items-forms form h2 {
+        font-size: 1.2em;
+        margin: 1em 0em 0em;
+    }
     main section.form-container div.body-container-items-forms form a {
         font-size: 1.1em;
-        margin-top: 0.61em;
+        margin: 0.61em auto 0em;
     }
 }
 @media (min-width: 992px) {
@@ -145,9 +169,15 @@ main section.form-container div.body-container-items-forms form a:hover {
     }
 }
 @media (min-width: 1400px) {
+    main section.form-container {
+        height: 130vh;
+    }
     main section.form-container div.body-container-items-forms {
         margin-top: 4.8em;
         padding: 0em 32.1em;
+    }
+    main section.form-container.edit-container div.body-container-items-forms {
+        margin-top: 1.8em;
     }
     main section.form-container div.body-container-items-forms h1 {
         font-size: 2em;
@@ -168,6 +198,6 @@ main section.form-container div.body-container-items-forms form a:hover {
     }
     main section.form-container div.body-container-items-forms form a {
         font-size: 1.2em;
-        margin-top: 0.67em;
+        margin: 0.67em auto 0em;
     }
 }

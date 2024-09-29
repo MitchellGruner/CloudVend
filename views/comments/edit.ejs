@@ -1,0 +1,13 @@
+<%- include("../partials/header") %>
+<%- include("../partials/menu") %>
+
+<section class="form-container edit-container">
+	<div class="body-container-items-forms container">
+		<h1><span>Edit <%= items.name %></span></h1>
+		
+		<form action="/comments/<%=comments._id%>/update/?_method=PUT" method="POST">
+			<h2>Comment</h2>
+			<textarea type="input" name="name" value="<%=comments.text%>">
+		</form>
+	</div>
+</section>

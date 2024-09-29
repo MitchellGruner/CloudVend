@@ -1,14 +1,16 @@
 <%- include("../partials/header") %>
+<%- include("../partials/menu") %>
 
-<form action="/items/<%=items._id%>/comments/new" method="POST">
-	<div class="container form">
-		<h1 id="center">Add a Comment</h1>
-		<div class="spacing">
-			<textarea class="form-control textarea" type="input" name="text" placeholder="text" style="height:10em;"required></textarea>
-		</div>
+<section id="edit-container" class="form-container edit-container">
+	<div class="body-container-items-forms container">
+		<h1><span>Add Your Comment...</span></h1>
 		
-		<button type="submit" class="btn btn-success">Submit!</button>
-		<button class="btn btn-info"><a href="/items">Go Back</a></button>
-	</div>
-</form>
+		<form action="/items/<%=items._id%>/comments/new" method="POST">
+			<h2>Name</h2>
+			<textarea type="input" name="text" placeholder="Text" required></textarea>
 
+			<button type="submit">Submit!</button>
+			<a href="javascript:history.back()">Go Back</a>
+		</form>
+	</div>
+</section>
