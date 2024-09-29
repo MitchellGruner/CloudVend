@@ -42,7 +42,7 @@ main section#landing-page.container-fluid div > div figure img {
 	height: auto;
 }
 main section#landing-page.container-fluid div > div h1 {
-	color: #0F7CF1;
+	color: #0F4C81;
 	font-weight: bolder;
 	font-size: 1.3em;
 }
@@ -50,7 +50,7 @@ main section#landing-page.container-fluid div > div h1 span {
 	background-size: 100% 15%;
 	background-repeat: repeat-x;
 	background-position: left 0% bottom 10%;
-	background-image: linear-gradient(179deg,#0F7CF1 0%, #0F7CF1 50%, transparent 54%, transparent 100%);
+	background-image: linear-gradient(179deg,#0F4C81 0%, #0F4C81 50%, transparent 54%, transparent 100%);
 }
 main section#landing-page.container-fluid div > div p {
 	color: #1E1E1E;
@@ -58,7 +58,7 @@ main section#landing-page.container-fluid div > div p {
 	font-size: 1.1em;
 }
 main section#landing-page.container-fluid div > div h2 {
-	color: #0F7CF1;
+	color: #0F4C81;
 	font-weight: bolder;
 	font-size: 0.9em;
 	margin-top: 0.81em;
