@@ -3,7 +3,7 @@ main section.form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 110vh;
+    height: 100vh;
     background-color: rgba(240, 240, 240, 0.9);
 }
 main section.form-container div.body-container-items-forms h1 {
@@ -95,9 +95,6 @@ main section.form-container div.body-container-items-forms form h2 {
 }
 
 @media (min-width: 400px) {
-    main section.form-container {
-        height: 120vh;
-    }
     main section.form-container div.body-container-items-forms {
         margin-top: 4em;
         padding: 0em 3.2em;
@@ -122,7 +119,7 @@ main section.form-container div.body-container-items-forms form h2 {
 }
 @media (min-width: 576px) {
     main section.form-container {
-        height: 130vh;
+        height: 110vh;
     }
     main section.form-container div.body-container-items-forms {
         margin-top: 4.4em;
@@ -168,12 +165,15 @@ main section.form-container div.body-container-items-forms form h2 {
     }
 }
 @media (min-width: 1400px) {
+    main section.form-container {
+        height: 130vh;
+    }
     main section.form-container div.body-container-items-forms {
         margin-top: 4.8em;
         padding: 0em 32.1em;
     }
     main section.form-container.edit-container div.body-container-items-forms {
-        margin-top: 17.8em;
+        margin-top: 1.8em;
     }
     main section.form-container div.body-container-items-forms h1 {
         font-size: 2em;
