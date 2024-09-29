@@ -1,15 +1,24 @@
 <%- include("../partials/header") %>
 <%- include("../partials/menu") %>
 
-<section class="form-container">
+<section class="form-container edit-container">
 	<div class="body-container-items-forms container">
 		<h1><span>Edit <%= items.name %></span></h1>
 		
 		<form action="/items/<%=items._id%>/update/?_method=PUT" method="POST">
+			<h2>Name</h2>
 			<input type="input" name="name" value="<%=items.name%>">
+
+			<h2>Category</h2>
 			<input type="input" name="image" value="<%=items.image%>">
+
+			<h2>Price</h2>
 			<input type="number" name="price" value="<%=items.price%>" min="0.01" step="0.01">
+
+			<h2>Condition</h2>
 			<input type="input" name="condition" value="<%=items.condition%>">
+
+			<h2>Description</h2>
 			<input type="input" name="description" value="<%=items.description%>">
 
 			<button type="submit">Submit!</button>
