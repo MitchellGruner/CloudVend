@@ -1,74 +1,31 @@
-<!DOCTYPE html>
-<html>
-	<header>
-		<title>CloudVend</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-	BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="/stylesheets/main.css">
-		<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
-		
-		<style>
-			main {
-				<%if(profiles.backgroundImage){%>
-					background-image: url("<%=profiles.backgroundImage%>");
-					background-size: cover;
-				<%}%>
-			}
-		</style>
-	</header>
+<%- include("../partials/header") %>
+<%- include("../partials/menu") %>
 
-	<main>
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/">CloudVend</a>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<%if(!currentUser){%>
-							<li><a href="/login">Login</a></li>
-							<li><a href="/register">Sign up</a></li>
-						<%} else {%>
-							<li><a href="/user">View Profiles</a></li>
-							<li><a href="/logout">Log out</a></li>
-						<%}%>
-					</ul>
-				</div>
-			</div>
-		</nav>
+<section id="profile-page" class="container-fluid">
+	<% if (profiles.backgroundImage) { %>
+		<div style="background-image: url('<%=profiles.backgroundImage%>')"></div>
+	<% } %>
 
-		<div class="menu">
-			<ul class="list-group">
-				<li class="list-group-item"><p>Welcome, <%=currentUser.username%></p></li>
-				<li class="list-group-item"><p><a href="/items/new">Create a New Item</a></p></li>
-					<%if(currentUser && profiles.author.id.equals(currentUser._id)){%>
-						<li class="list-group-item"><p><a href="/user/<%=profiles._id%>/edit">Edit Profile</a></p></li>
-					<%}%>
-				<li class="list-group-item"><p><a href="/items">View Items From <%=currentUser.city%></a></p></li>
-				<li class="list-group-item"><p><a href="/items/all">View all Items</a></p></li>
-				<li class="list-group-item"><p><a href="#"></a>Lives in <%=currentUser.city%></p></li>
-				<li class="list-group-item"><p><a href="/user">Go Back</a></p></li>
-			</ul>
+	<div class="container">
+		<figure>
+			<img src="<%=profiles.image%>" />
+		</figure>
+	
+		<div>
+			<h1><%=profiles.author.username%></h1>
+			<p><%=profiles.biography%></p>
+	
+			<hr />
+	
+			<% if(!(profiles.facebook == "other link")) {%>
+				<a href="<%=profiles.facebook%>">Facebook</a>
+			<% } %>
+			<% if(!(profiles.instagram == "other link")) {%>
+				<a href="<%=profiles.instagram%>">Instagram</a>
+			<% } %>
+			<% if(!(profiles.other == "other link")) { %>
+				<a href="<%=profiles.other%>">Other</a>
+			<% } %>
 		</div>
-
-		<div class="container right">
-			<div class="row text-center">
-				<div class="col-md-9 pull-right">
-					<div class="#">
-						<img class="img-responsive containment large" id="profile" src="<%=profiles.image%>"/>
-						</div>
-					</div>
-					<div class="right-align">
-						<mark><a><em>"<%=profiles.biography%>"</em><br>-<%=profiles.author.username%></a></mark>
-						<br>
-						<%if(!(profiles.facebook == "other link")){%>
-							<a id="link" href="<%=profiles.facebook%>">Facebook</a>
-						<%}%>
-						<%if(!(profiles.instagram == "other link")){%>
-							<a id="link" href="<%=profiles.instagram%>">Instagram</a>
-						<%}%>
-						<%if(!(profiles.other == "other link")){%>
-							<a id="link" href="<%=profiles.other%>">Other</a>
-						<%}%>
-					</div>
-				</div>
-			</div>
+	</div>
+</section>
