@@ -21,21 +21,35 @@
 			<div>
 				<% if(profiles.facebook) {%>
 					<a href="<%=profiles.facebook%>">
-						<img src="/images/facebook-icon.png" />
+						<img src="/images/facebook.icon.png" />
 					</a>
 				<% } %>
 				<% if(profiles.instagram) {%>
 					<a href="<%=profiles.instagram%>">
-						<img src="/images/instagram-icon.png" />
+						<img src="/images/instagram.icon.png" />
 					</a>
 				<% } %>
 				<% if(profiles.other) { %>
 					<a href="<%=profiles.other%>">
-						<img src="/images/link-icon.png" />
+						<img src="/images/link.icon.png" />
 					</a>
 				<% } %>
 			</div>
 			<% } %>
 		</div>
+
+		<% if (typeof items !== 'undefined') { %>
+			<% items.forEach((item) => { %>
+				<% if (item.author.id.toString() === profiles.author.id.toString()) { %>
+					<div class="item">
+						<figure>
+							<img src="<%=item.image%>" />
+						</figure>
+						<h3 style="color: #000;"><%=item.name%></h3>
+						<p style="color: #000;"><%=item.description%></p>
+					</div>
+				<% } %>
+			<% }); %>
+		<% } %>
 	</div>
 </section>
