@@ -8,15 +8,14 @@ section#profile-page div > * {
     color: #fff;
 }
 section#profile-page,
-section#profile-page div:nth-child(2) {
+section#profile-page > div:nth-child(2) {
     position: relative;
     z-index: 0;
 }
 section#profile-page {
     background-color: rgba(240, 240, 240, 0.9);
-    height: 100vh;
 }
-section#profile-page div:nth-child(1) {
+section#profile-page > div:nth-child(1) {
     position: absolute;
     top: 0;
     left: 0;
@@ -29,13 +28,11 @@ section#profile-page div:nth-child(1) {
     width: 100%;
     z-index: 0;
 }
-section#profile-page div.container {
+section#profile-page > div:nth-child(2) {
     padding: 8em 1.2em 0em;
-}
-section#profile-page div:nth-child(2) {
     z-index: 1;
 }
-section#profile-page div figure img {
+section#profile-page > div:nth-child(2) figure img {
     border-radius: 50%;
     object-fit: cover;
     margin: auto;
@@ -44,202 +41,221 @@ section#profile-page div figure img {
     width: 150px;
     height: 150px;
 }
-section#profile-page div h1 {
+section#profile-page > div:nth-child(2) h1 {
     font-weight: bolder;
 }
-section#profile-page div h1 {
+section#profile-page > div:nth-child(2) h1 {
     font-size: 1.4em;
     margin: 1.2em auto 0.5em;
 }
-section#profile-page div p {
+section#profile-page > div:nth-child(2) p {
     font-weight: initial;
     font-size: 1em;
 }
-section#profile-page div hr {
+section#profile-page > div:nth-child(2) hr {
     margin: 1.6em auto 0.5em;
 }
-section#profile-page > div > div {
+section#profile-page > div:nth-child(2) > div {
     background-color: #1B1F23;
     box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
     border-radius: 0.6em;
     padding: 0.31em 1.2em;
     margin-top: 2em;
 }
-section#profile-page div div div {
+section#profile-page > div:nth-child(2) div div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 2.2em 2em;
 }
-section#profile-page div div div img {
+section#profile-page > div:nth-child(2) div div img {
     max-width: 60%;
+}
+section#profile-page > div:nth-child(3) h2 {
+    color: #0F4C81;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-size: 1.2em;
+    margin: 4.2em auto 0.81em;
 }
 
 @media (min-width: 400px) {
     /* profile page show styles */
-    section#profile-page div:nth-child(1) {
-        height: 18em;
-    }
-    section#profile-page div.container {
+    section#profile-page > div:nth-child(2) {
         padding: 7.7em 3.4em 0em;
     }
-    section#profile-page div figure img {
+    section#profile-page > div:nth-child(2) figure img {
         width: 220px;
         height: 220px;
     }
-    section#profile-page div h1 {
+    section#profile-page > div:nth-child(2) h1 {
         font-size: 1.5em;
         margin: 1.3em auto 0.55em;
     }
-    section#profile-page div p {
+    section#profile-page > div:nth-child(2) p {
         font-size: 1.1em;
     }
-    section#profile-page div hr {
+    section#profile-page > div:nth-child(2) hr {
         margin: 1.7em auto 0.55em;
     }
-    section#profile-page > div > div {
+    section#profile-page > div:nth-child(2) > div {
         padding: 0.34em 1.8em;
         margin-top: 2.2em;
     }
-    section#profile-page div div div {
+    section#profile-page > div:nth-child(2) div div {
         margin: 2.4em 5em;
     }
-    section#profile-page div div div img {
+    section#profile-page > div:nth-child(2) div div img {
         max-width: 65%;
+    }
+    section#profile-page > div:nth-child(3) h2 {
+        font-size: 1.3em;
+        margin: 4.6em auto 0.9em;
     }
 }
 @media (min-width: 576px) {
     /* profile page show styles */
-    section#profile-page {
-        height: 110vh;
-    }
-    section#profile-page div:nth-child(1) {
+    section#profile-page > div:nth-child(1) {
         height: 22em;
     }
-    section#profile-page div.container {
+    section#profile-page > div:nth-child(2) {
         padding: 8.4em 3.7em 0em;
     }
-    section#profile-page div figure img {
+    section#profile-page > div:nth-child(2) figure img {
         width: 250px;
         height: 250px;
     }
-    section#profile-page div h1 {
+    section#profile-page > div:nth-child(2) h1 {
         font-size: 1.6em;
         margin: 1.4em auto 0.61em;
     }
-    section#profile-page div p {
+    section#profile-page > div:nth-child(2) p {
         font-size: 1.2em;
     }
-    section#profile-page div hr {
+    section#profile-page > div:nth-child(2) hr {
         margin: 1.8em auto 0.61em;
     }
-    section#profile-page > div > div {
+    section#profile-page > div:nth-child(2) > div {
         padding: 0.37em 2.4em;
         margin-top: 2.4em;
     }
-    section#profile-page div div div {
+    section#profile-page > div:nth-child(2) div div {
         margin: 2.6em 9.5em;
     }
-    section#profile-page div div div img {
+    section#profile-page > div:nth-child(2) div div img {
         max-width: 70%;
+    }
+    section#profile-page > div:nth-child(3) h2 {
+        font-size: 1.4em;
+        margin: 5.1em auto 1em;
     }
 }
 @media (min-width: 768px) {
     /* profile page show styles */
-    section#profile-page {
-        height: 130vh;
-    }
-    section#profile-page div:nth-child(1) {
+    section#profile-page > div:nth-child(1) {
         height: 25em;
     }
-    section#profile-page div.container {
+    section#profile-page > div:nth-child(2) {
         padding: 11.3em 3.7em 0em;
     }
-    section#profile-page div figure img {
+    section#profile-page > div:nth-child(2) figure img {
         width: 280px;
         height: 280px;
     }
-    section#profile-page div h1 {
+    section#profile-page > div:nth-child(2) h1 {
         font-size: 1.8em;
         margin: 1.5em auto 0.67em;
     }
-    section#profile-page div p {
+    section#profile-page > div:nth-child(2) p {
         font-size: 1.3em;
     }
-    section#profile-page div hr {
+    section#profile-page > div:nth-child(2) hr {
         margin: 2em auto 0.67em;
     }
-    section#profile-page > div > div {
+    section#profile-page > div:nth-child(2) > div {
         padding: 0.41em 2.6em;
         margin: 2.6em 5.1em 0em;
     }
-    section#profile-page div div div {
+    section#profile-page > div:nth-child(2) div div {
         margin: 2.8em 11em;
     }
-    section#profile-page div div div img {
+    section#profile-page > div:nth-child(2) div div img {
         max-width: 75%;
+    }
+    section#profile-page > div:nth-child(3) h2 {
+        font-size: 1.5em;
+        margin: 5.6em auto 1.1em;
     }
 }
 @media (min-width: 992px) {
     /* profile page show styles */
-    section#profile-page {
-        height: 150vh;
-    }
-    section#profile-page div figure img {
+    section#profile-page > div:nth-child(2) figure img {
         width: 300px;
         height: 300px;
     }
-    section#profile-page div h1 {
+    section#profile-page > div:nth-child(2) h1 {
         font-size: 2em;
         margin: 1.6em auto 0.73em;
     }
-    section#profile-page div p {
+    section#profile-page > div:nth-child(2) p {
         font-size: 1.4em;
     }
-    section#profile-page div hr {
+    section#profile-page > div:nth-child(2) hr {
         margin: 2.2em auto 0.74em;
     }
-    section#profile-page > div > div {
+    section#profile-page > div:nth-child(2) > div {
         padding: 0.45em 3.2em;
         margin: 2.8em 6.6em 0em;
     }
-    section#profile-page div div div {
+    section#profile-page > div:nth-child(2) div div {
         margin: 3.1em 17em;
     }
-    section#profile-page div div div img {
+    section#profile-page > div:nth-child(2) div div img {
         max-width: 85%;
+    }
+    section#profile-page > div:nth-child(3) h2 {
+        /* font-size: 1.6em; */
+        margin: 6.2em auto 1.2em;
     }
 }
 @media (min-width: 1200px) {
     /* profile page show styles */
-    section#profile-page div figure {
+    section#profile-page > div:nth-child(2) figure {
         position: absolute;
     }
-    section#profile-page div figure img {
+    section#profile-page > div:nth-child(2) figure img {
         margin: initial;
     }
-    section#profile-page > div > div {
+    section#profile-page > div:nth-child(2) > div {
         margin: 15.8em 0em 0em 27.2em;
+    }
+    section#profile-page > div:nth-child(3) h2 {
+        font-size: 1.6em;
+        margin: 6.8em auto 1.3em;
     }
 }
 @media (min-width: 1400px) {
     /* profile page show styles */
-    section#profile-page div h1 {
+    section#profile-page > div:nth-child(2) h1 {
         font-size: 2.2em;
         margin: 1.7em auto 0.81em;
     }
-    section#profile-page div p {
+    section#profile-page > div:nth-child(2) p {
         font-size: 1.5em;
     }
-    section#profile-page div hr {
+    section#profile-page > div:nth-child(2) hr {
         margin: 2.4em auto 0.82em;
     }
-    section#profile-page > div > div {
+    section#profile-page > div:nth-child(2) > div {
         padding: 0.5em 3.5em;
         margin: 16.8em 0em 0em 30.2em;
     }
-    section#profile-page div div div {
+    section#profile-page > div:nth-child(2) div div {
         margin: 3.4em 20em;
+    }
+    section#profile-page > div:nth-child(3) h2 {
+        font-size: 1.7em;
+        margin: 7.5em auto 1.4em;
     }
 }
