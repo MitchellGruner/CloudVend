@@ -37,19 +37,64 @@
 			</div>
 			<% } %>
 		</div>
+	</div>
 
-		<% if (typeof items !== 'undefined') { %>
-			<% items.forEach((item) => { %>
-				<% if (item.author.id.toString() === profiles.author.id.toString()) { %>
-					<div class="item">
-						<figure>
-							<img src="<%=item.image%>" />
-						</figure>
-						<h3 style="color: #000;"><%=item.name%></h3>
-						<p style="color: #000;"><%=item.description%></p>
-					</div>
-				<% } %>
-			<% }); %>
+	<div class="body-container-items-forms container">
+		<% let authorHasItems = items && items.some(item => item.author.id.toString() === profiles.author.id.toString())
+		%>
+
+		<% if (authorHasItems) { %>
+			<h2>Items Listed by <%=profiles.author.username%></h2>
+
+			<div class="items-container">
+				<% items.forEach((item) => { %>
+					<% if (item.author.id.toString() === profiles.author.id.toString()) { %>
+						<div>
+							<div class="category-container">
+								<h3><span>Category</span></h3>
+							</div>
+		
+							<% if (item.image) { %>
+								<div class="image-container">
+									<figure>
+										<img src="<%=item.image%>" />
+									</figure>
+		
+									<% if (currentUser && item.author.id.equals(currentUser._id)) { %>
+										<div>
+											<a href="../items/<%=item._id%>/edit">
+												<figure>
+													<img src="/images/edit-icon.png" alt="Edit Icon" />
+												</figure>
+											</a>
+											<a href="../items/<%=item._id%>/delete">
+												<figure>
+													<img src="/images/trash-icon.png" alt="Trash Icon" />
+												</figure>
+											</a>
+										</div>
+									<% } %>
+								</div>
+							<% } %>
+		
+							<div class="container">
+								<div>
+									<h4><span><%=item.name%></span></h4>
+									<span class="price">$<%=item.price%></span>
+								</div>
+								<h5><%=item.condition%></h5>
+								<p>"<%=item.description%>" - <%=item.author.username%></p>
+								<hr />
+								<h6>Item available in <span><%=item.author.city%></span></h6>
+							</div>
+		
+							<a href="../items/<%=item._id%>" class="view-more-btn">View More</a>
+						</div>
+					<% } %>
+				<% }); %>
+			</div>
+		<% } else { %>
+			<h2>No Items Listed Yet</h2>
 		<% } %>
 	</div>
 </section>
