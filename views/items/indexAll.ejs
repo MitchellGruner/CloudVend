@@ -5,17 +5,7 @@
 	<%- include("../partials/menu") %>
 
     <div class="body-container-items-forms container">
-        <% if (items.length !== 0) { %>
-            <article>
-                <a href="/items/new">Create a New Item</a>
-                <a href="/user">Go to Profiles Page</a>
-                <a href="/items/all">View all Items</a>
-                <% if (currentUser.city) { %>
-                    <a href="/items/city">View Items in <%=currentUser.city%></a>
-                <% } %>
-                <a href="/">Home</a>
-            </article>
-        <% } %>
+        <%- include("../partials/navigation") %>
 
         <div class="items-container">
             <% items.forEach((item) => { %>

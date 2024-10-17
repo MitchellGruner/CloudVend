@@ -5,17 +5,7 @@
 	<%- include("../partials/menu") %>
 
     <div class="body-container-items-forms container">
-        <% if (items.length !== 0) { %>
-            <article>
-                <a href="/items/new">Create a New Item</a>
-                <a href="/user">Go to Profiles Page</a>
-                <a href="/items/all">View all Items</a>
-                <% if (currentUser.city) { %>
-                    <a href="/items/city">View Items in <%=currentUser.city%></a>
-                <% } %>
-                <a href="/">Home</a>
-            </article>
-        <% } %>
+        <%- include("../partials/navigation") %>
 
 		<div class="items-container">
 			<div>
@@ -52,7 +42,7 @@
 						<span class="price">$<%=items.price%></span>
 					</div>
 					<h3><%=items.condition%></h3>
-					<p>"<%=items.description%>" - <%=items.author.username%></p>
+					<p>"<%=items.description%>" - <a href="/user/<%=items.author.id%>"><%=items.author.username%></a></p>
 					<hr />
 					<h4>Item available in <span><%=items.author.city%></span></h4>
 				</div>
