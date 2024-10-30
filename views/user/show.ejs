@@ -1,100 +1,104 @@
 <%- include("../partials/header") %>
 <%- include("../partials/menu") %>
 
-<section id="profile-page">
+<section id="display-items" class="profile-page display-items-container container-fluid">
 	<% if (profiles.backgroundImage) { %>
 		<div style="background-image: url('<%=profiles.backgroundImage%>')"></div>
 	<% } %>
 
-	<div class="container">
-		<figure>
-			<img src="<%=profiles.image%>" />
-		</figure>
-	
+	<div class="body-container-items-forms container">
+		<%- include("../partials/navigation") %>
+
 		<div>
-			<h1><%=profiles.author.username%></h1>
-			<p><%=profiles.biography%></p>
-	
-			<hr />
-	
-			<% if (profiles.facebook || profiles.instagram || profiles.other) { %>
+			<figure>
+				<img src="<%=profiles.image%>" />
+			</figure>
+		
 			<div>
-				<% if(profiles.facebook) {%>
-					<a href="<%=profiles.facebook%>">
-						<img src="/images/facebook.icon.png" />
-					</a>
-				<% } %>
-				<% if(profiles.instagram) {%>
-					<a href="<%=profiles.instagram%>">
-						<img src="/images/instagram.icon.png" />
-					</a>
-				<% } %>
-				<% if(profiles.other) { %>
-					<a href="<%=profiles.other%>">
-						<img src="/images/link.icon.png" />
-					</a>
+				<h1><span><%=profiles.author.username%></span></h1>
+				<p><%=profiles.biography%></p>
+		
+				<hr />
+		
+				<% if (profiles.facebook || profiles.instagram || profiles.other) { %>
+				<div>
+					<% if(profiles.facebook) {%>
+						<a href="<%=profiles.facebook%>">
+							<img src="/images/facebook-icon.png" />
+						</a>
+					<% } %>
+					<% if(profiles.instagram) {%>
+						<a href="<%=profiles.instagram%>">
+							<img src="/images/instagram-icon.png" />
+						</a>
+					<% } %>
+					<% if(profiles.other) { %>
+						<a href="<%=profiles.other%>">
+							<img src="/images/link-icon.png" />
+						</a>
+					<% } %>
+				</div>
 				<% } %>
 			</div>
+		</div>
+
+		<div>
+			<% let authorHasItems = items && items.some(item => item.author.id.toString() === profiles.author.id.toString())
+			%>
+
+			<% if (authorHasItems) { %>
+				<h2><span>Items Listed by <%=profiles.author.username%></span></h2>
+
+				<div class="items-container">
+					<% items.forEach((item) => { %>
+						<% if (item.author.id.toString() === profiles.author.id.toString()) { %>
+							<div>
+								<div class="category-container">
+									<h3><span>Category</span></h3>
+								</div>
+			
+								<% if (item.image) { %>
+									<div class="image-container">
+										<figure>
+											<img src="<%=item.image%>" />
+										</figure>
+			
+										<% if (currentUser && item.author.id.equals(currentUser._id)) { %>
+											<div>
+												<a href="../items/<%=item._id%>/edit">
+													<figure>
+														<img src="/images/edit-icon.png" alt="Edit Icon" />
+													</figure>
+												</a>
+												<a href="../items/<%=item._id%>/delete">
+													<figure>
+														<img src="/images/trash-icon.png" alt="Trash Icon" />
+													</figure>
+												</a>
+											</div>
+										<% } %>
+									</div>
+								<% } %>
+			
+								<div class="container">
+									<div>
+										<h4><span><%=item.name%></span></h4>
+										<span class="price">$<%=item.price%></span>
+									</div>
+									<h5><%=item.condition%></h5>
+									<p>"<%=item.description%>" - <%=item.author.username%></p>
+									<hr />
+									<h6>Item available in <span><%=item.author.city%></span></h6>
+								</div>
+			
+								<a href="../items/<%=item._id%>" class="view-more-btn">View More</a>
+							</div>
+						<% } %>
+					<% }); %>
+				</div>
+			<% } else { %>
+				<h2>No Items Listed Yet</h2>
 			<% } %>
 		</div>
-	</div>
-
-	<div class="body-container-items-forms container">
-		<% let authorHasItems = items && items.some(item => item.author.id.toString() === profiles.author.id.toString())
-		%>
-
-		<% if (authorHasItems) { %>
-			<h2>Items Listed by <%=profiles.author.username%></h2>
-
-			<div class="items-container">
-				<% items.forEach((item) => { %>
-					<% if (item.author.id.toString() === profiles.author.id.toString()) { %>
-						<div>
-							<div class="category-container">
-								<h3><span>Category</span></h3>
-							</div>
-		
-							<% if (item.image) { %>
-								<div class="image-container">
-									<figure>
-										<img src="<%=item.image%>" />
-									</figure>
-		
-									<% if (currentUser && item.author.id.equals(currentUser._id)) { %>
-										<div>
-											<a href="../items/<%=item._id%>/edit">
-												<figure>
-													<img src="/images/edit-icon.png" alt="Edit Icon" />
-												</figure>
-											</a>
-											<a href="../items/<%=item._id%>/delete">
-												<figure>
-													<img src="/images/trash-icon.png" alt="Trash Icon" />
-												</figure>
-											</a>
-										</div>
-									<% } %>
-								</div>
-							<% } %>
-		
-							<div class="container">
-								<div>
-									<h4><span><%=item.name%></span></h4>
-									<span class="price">$<%=item.price%></span>
-								</div>
-								<h5><%=item.condition%></h5>
-								<p>"<%=item.description%>" - <%=item.author.username%></p>
-								<hr />
-								<h6>Item available in <span><%=item.author.city%></span></h6>
-							</div>
-		
-							<a href="../items/<%=item._id%>" class="view-more-btn">View More</a>
-						</div>
-					<% } %>
-				<% }); %>
-			</div>
-		<% } else { %>
-			<h2>No Items Listed Yet</h2>
-		<% } %>
 	</div>
 </section>
