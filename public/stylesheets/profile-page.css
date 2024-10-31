@@ -32,6 +32,8 @@ section#display-items.profile-page > div:nth-child(1) {
     z-index: 0;
 }
 section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
     padding: 0em;
     z-index: 1;
 }
@@ -40,7 +42,7 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
     object-fit: cover;
     margin: auto;
     box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
-    border: 1px solid #000;
+    border: 1px solid #fff;
     width: 150px;
     height: 150px;
 }
@@ -61,7 +63,7 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
     border-top: 1px solid #1E1E1E;
 }
 section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) > div {
-    padding: 0.31em 1.2em;
+    padding: 0.31em 0.5em;
 }
 section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) > div > * {
     color: #1E1E1E;
@@ -81,8 +83,8 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
 	background-image: linear-gradient(179deg,#0F4C81 0%, #0F4C81 50%, transparent 54%, transparent 100%);
 }
 section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div {
-    display: block ruby;
-    margin: 2.2em 2em;
+    display: inline-flex;
+    margin: 1.2em 2em 2.2em;
 }
 section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div img {
     max-width: 60%;
@@ -112,10 +114,10 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
         margin: 1.7em auto 0.55em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) > div {
-        padding: 0.34em 1.8em;
+        padding: 0.34em 0.81em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div {
-        margin: 2.4em 5em;
+        margin: 1.4em 5em 2.4em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div img {
         max-width: 65%;
@@ -148,10 +150,10 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
         margin: 1.8em auto 0.61em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) > div {
-        padding: 0.37em 2.4em;
+        padding: 0.37em 4.9em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div {
-        margin: 2.6em 9.5em;
+        margin: 2.6em auto 2.5em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div img {
         max-width: 70%;
@@ -175,7 +177,7 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) h1 {
         font-size: 1.8em;
-        margin: 1.5em auto 0.67em;
+        margin: 1em auto 0.67em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) p {
         font-size: 1.3em;
@@ -184,7 +186,7 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
         margin: 2em auto 0.67em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) > div {
-        padding: 0.41em 2.6em;
+        padding: 0.41em 5.4em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div {
         margin: 2.8em 11em;
@@ -194,18 +196,18 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(3) h2 {
         font-size: 1.5em;
-        margin-bottom: 1.1em;
+        margin: 1em auto 0.2em;
     }
 }
 @media (min-width: 992px) {
     /* profile page show styles */
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) figure img {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) h1 {
         font-size: 2em;
-        margin: 1.6em auto 0.73em;
+        margin: 1em auto 0.73em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) p {
         font-size: 1.4em;
@@ -214,16 +216,16 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
         margin: 2.2em auto 0.74em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) > div {
-        padding: 0.45em 3.2em;
+        padding: 0.45em 1.9em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div {
-        margin: 3.1em 17em;
+        margin: 1.1em 14em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div img {
         max-width: 85%;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(3) h2 {
-        margin-bottom: 1.2em;
+        margin: 1.1em auto 0.22em;
     }
 }
 @media (min-width: 1200px) {
@@ -233,14 +235,18 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(3) h2 {
         font-size: 1.6em;
-        margin-bottom: 1.3em;
+        margin: 1.2em auto 0.24em;
     }
 }
 @media (min-width: 1400px) {
     /* profile page show styles */
+    section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) figure img {
+        width: 300px;
+        height: 300px;
+    }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) h1 {
         font-size: 2.2em;
-        margin: 1.7em auto 0.81em;
+        margin: 1.1em auto 0.81em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) p {
         font-size: 1.5em;
@@ -249,16 +255,16 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
         margin: 2.4em auto 0.82em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) > div {
-        padding: 0.5em 3.5em;
+        padding: 0.5em 6.5em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div {
-        margin: 3.4em 20em;
+        margin: 1.4em 0em 3.2em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(2) div div a {
         margin: 0em 1.2em;
     }
     section#display-items.profile-page div.body-container-items-forms > div:nth-child(3) h2 {
         font-size: 1.7em;
-        margin-bottom: 1.4em;
+        margin: 1.3em auto 0.26em;
     }
 }
