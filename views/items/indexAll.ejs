@@ -5,17 +5,7 @@
 	<%- include("../partials/menu") %>
 
     <div class="body-container-items-forms container">
-        <% if (items.length !== 0) { %>
-            <article>
-                <a href="/items/new">Create a New Item</a>
-                <a href="/user">Go to Profiles Page</a>
-                <a href="/items/all">View all Items</a>
-                <% if (currentUser.city) { %>
-                    <a href="/items/city">View Items in <%=currentUser.city%></a>
-                <% } %>
-                <a href="/">Home</a>
-            </article>
-        <% } %>
+        <%- include("../partials/navigation") %>
 
         <div class="items-container">
             <% items.forEach((item) => { %>
@@ -55,7 +45,7 @@
                         <h3><%=item.condition%></h3>
                         <p>"<%=item.description%>" - <%=item.author.username%></p>
                         <hr />
-                        <h4>Item available in <span><%=item.author.city%></span></h4>
+                        <h4>Item available in&nbsp;<span><%=item.author.city%></span></h4>
                     </div>
 
                     <a href="../items/<%=item._id%>" class="view-more-btn">View More</a>

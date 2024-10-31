@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
     offScreenMenu.style.top = `${menuHeight - 1}px`;
 
     /* apply transition to main content */
-    itemsContainer.style.transition = "opacity 0.5s ease-in-out";
+    if (itemsContainer !== null) {
+        itemsContainer.style.transition = "opacity 0.5s ease-in-out";
+    }
 
     if (window.matchMedia("(max-width: 992px)").matches) {
         hamburgerMenu.addEventListener("click", () => {

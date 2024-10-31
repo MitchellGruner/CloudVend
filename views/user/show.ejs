@@ -1,74 +1,104 @@
-<!DOCTYPE html>
-<html>
-	<header>
-		<title>CloudVend</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-	BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="/stylesheets/main.css">
-		<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+<%- include("../partials/header") %>
+<%- include("../partials/menu") %>
+
+<section id="display-items" class="profile-page display-items-container container-fluid">
+	<% if (profiles.backgroundImage) { %>
+		<div style="background-image: url('<%=profiles.backgroundImage%>')"></div>
+	<% } %>
+
+	<div class="body-container-items-forms container">
+		<%- include("../partials/navigation") %>
+
+		<div>
+			<figure>
+				<img src="<%=profiles.image%>" />
+			</figure>
 		
-		<style>
-			main {
-				<%if(profiles.backgroundImage){%>
-					background-image: url("<%=profiles.backgroundImage%>");
-					background-size: cover;
-				<%}%>
-			}
-		</style>
-	</header>
-
-	<main>
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/">CloudVend</a>
+			<div class="profile-div">
+				<h1><span><%=profiles.author.username%></span></h1>
+				<p><%=profiles.biography%></p>
+		
+				<hr />
+		
+				<% if (profiles.facebook || profiles.instagram || profiles.other) { %>
+				<div>
+					<% if(profiles.facebook) {%>
+						<a href="<%=profiles.facebook%>">
+							<img src="/images/facebook-icon.png" />
+						</a>
+					<% } %>
+					<% if(profiles.instagram) {%>
+						<a href="<%=profiles.instagram%>">
+							<img src="/images/instagram-icon.png" />
+						</a>
+					<% } %>
+					<% if(profiles.other) { %>
+						<a href="<%=profiles.other%>">
+							<img src="/images/link-icon.png" />
+						</a>
+					<% } %>
 				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<%if(!currentUser){%>
-							<li><a href="/login">Login</a></li>
-							<li><a href="/register">Sign up</a></li>
-						<%} else {%>
-							<li><a href="/user">View Profiles</a></li>
-							<li><a href="/logout">Log out</a></li>
-						<%}%>
-					</ul>
-				</div>
+				<% } %>
 			</div>
-		</nav>
-
-		<div class="menu">
-			<ul class="list-group">
-				<li class="list-group-item"><p>Welcome, <%=currentUser.username%></p></li>
-				<li class="list-group-item"><p><a href="/items/new">Create a New Item</a></p></li>
-					<%if(currentUser && profiles.author.id.equals(currentUser._id)){%>
-						<li class="list-group-item"><p><a href="/user/<%=profiles._id%>/edit">Edit Profile</a></p></li>
-					<%}%>
-				<li class="list-group-item"><p><a href="/items">View Items From <%=currentUser.city%></a></p></li>
-				<li class="list-group-item"><p><a href="/items/all">View all Items</a></p></li>
-				<li class="list-group-item"><p><a href="#"></a>Lives in <%=currentUser.city%></p></li>
-				<li class="list-group-item"><p><a href="/user">Go Back</a></p></li>
-			</ul>
 		</div>
 
-		<div class="container right">
-			<div class="row text-center">
-				<div class="col-md-9 pull-right">
-					<div class="#">
-						<img class="img-responsive containment large" id="profile" src="<%=profiles.image%>"/>
-						</div>
-					</div>
-					<div class="right-align">
-						<mark><a><em>"<%=profiles.biography%>"</em><br>-<%=profiles.author.username%></a></mark>
-						<br>
-						<%if(!(profiles.facebook == "other link")){%>
-							<a id="link" href="<%=profiles.facebook%>">Facebook</a>
-						<%}%>
-						<%if(!(profiles.instagram == "other link")){%>
-							<a id="link" href="<%=profiles.instagram%>">Instagram</a>
-						<%}%>
-						<%if(!(profiles.other == "other link")){%>
-							<a id="link" href="<%=profiles.other%>">Other</a>
-						<%}%>
-					</div>
+		<div>
+			<% let authorHasItems = items && items.some(item => item.author.id.toString() === profiles.author.id.toString())
+			%>
+
+			<% if (authorHasItems) { %>
+				<h2><span>Items Listed by <%=profiles.author.username%></span></h2>
+
+				<div class="items-container">
+					<% items.forEach((item) => { %>
+						<% if (item.author.id.toString() === profiles.author.id.toString()) { %>
+							<div class="items-container-div">
+								<div class="category-container">
+									<h3><span>Category</span></h3>
+								</div>
+			
+								<% if (item.image) { %>
+									<div class="image-container">
+										<figure>
+											<img src="<%=item.image%>" />
+										</figure>
+			
+										<% if (currentUser && item.author.id.equals(currentUser._id)) { %>
+											<div>
+												<a href="../items/<%=item._id%>/edit">
+													<figure>
+														<img src="/images/edit-icon.png" alt="Edit Icon" />
+													</figure>
+												</a>
+												<a href="../items/<%=item._id%>/delete">
+													<figure>
+														<img src="/images/trash-icon.png" alt="Trash Icon" />
+													</figure>
+												</a>
+											</div>
+										<% } %>
+									</div>
+								<% } %>
+			
+								<div class="container">
+									<div>
+										<h4><span><%=item.name%></span></h4>
+										<span class="price">$<%=item.price%></span>
+									</div>
+									<h5><%=item.condition%></h5>
+									<p>"<%=item.description%>" - <%=item.author.username%></p>
+									<hr />
+									<h6>Item available in&nbsp;<span><%=item.author.city%></span></h6>
+								</div>
+			
+								<a href="../items/<%=item._id%>" class="view-more-btn">View More</a>
+							</div>
+						<% } %>
+					<% }); %>
 				</div>
-			</div>
+			<% } else { %>
+				<h2>No Items Listed Yet</h2>
+			<% } %>
+		</div>
+	</div>
+</section>

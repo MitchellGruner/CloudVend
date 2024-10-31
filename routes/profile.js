@@ -19,29 +19,37 @@ router.get("/user", middleware.isLoggedIn, (req, res) => {
 
 // make a new profile.
 router.post("/user", (req, res) => {
-	var image = req.body.image;
-	var biography = req.body.biography;
-	var backgroundImage = req.body.backgroundImage;
-	var facebook = req.body.facebook;
-	var instagram = req.body.instagram;
-	var other = req.body.other;
-	var author = {
-		id: req.user._id,
-		username: req.user.username,
-		city: req.user.city,
-		email: req.user.email,
-		image: req.user.image
-	};
-	var newProfile = {image: image, biography: biography, backgroundImage: backgroundImage, facebook: facebook, 
-					  instagram: instagram, other: other, author: author};
-	Profile.create(newProfile, (err, profile) => {
-		if(err){
-			console.log(err);
-		} else {
-			console.log(profile);
-			res.render("user/show", {profiles: profile});
-		}
-	});
+    var image = req.body.image;
+    var biography = req.body.biography;
+    var backgroundImage = req.body.backgroundImage;
+    var facebook = req.body.facebook;
+    var instagram = req.body.instagram;
+    var other = req.body.other;
+    var author = {
+        id: req.user._id,
+        username: req.user.username,
+        city: req.user.city,
+        email: req.user.email,
+        image: req.user.image
+    };
+    var newProfile = {image: image, biography: biography, backgroundImage: backgroundImage, facebook: facebook, 
+                      instagram: instagram, other: other, author: author};
+
+    Profile.create(newProfile, (err, profile) => {
+        if (err) {
+            console.log(err);
+        } else {
+
+            // fetch items data
+            Items.find({}, (err, items) => {
+                if(err){
+                    res.redirect("/items");
+                } else {
+                    res.render("user/show", {profiles: profile, items: items});
+                }
+            });
+        }
+    });
 });
 
 // get to profile creation page.
@@ -51,13 +59,21 @@ router.get("/user/new", (req, res) => {
 
 // show profile.
 router.get("/user/:id", (req, res) => {
-	Profile.findById(req.params.id, (err, profile) => {
-		if(err){
-			res.redirect("/items");
-		} else {
-			res.render("user/show", {profiles: profile})
-		}
-	});
+    Profile.findById(req.params.id, (err, profile) => {
+        if(err){
+            res.redirect("/items");
+        } else {
+			
+            // fetch items data.
+            Items.find({}, (err, items) => {
+                if(err){
+                    res.redirect("/items");
+                } else {
+                    res.render("user/show", {profiles: profile, items: items});
+                }
+            });
+        }
+    });
 });
 
 // edit profile.

@@ -1,28 +1,31 @@
 <%- include("../partials/header") %>
+<%- include("../partials/menu") %>
 
-<form action="/user" method="POST">
-	<div class="container form">
-		<h1 id="center">Create a New Profile Page</h1>
-		<div class="spacing">
-			<input class="form-control" type="input" name="image" placeholder="image url" required>
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="biography" placeholder="biography" required>	
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="backgroundImage" placeholder="background-image url">	
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="facebook" placeholder="facebook link">	
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="instagram" placeholder="instagram link">	
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="other" placeholder="other link">	
-		</div>
+<section id="profile-container" class="form-container edit-container">
+	<div class="body-container-items-forms container">
+		<h1><span>Create Your Profile</span></h1>
 		
-		<button type="submit" class="btn btn-success">Submit!</button>
-		<button class="btn btn-info"><a href="/user">Go Back</a></button>
+		<form action="/user" method="POST">
+			<h2>Profile Image URL</h2>
+			<input type="input" name="image" placeholder="Profile Image URL (300 x 300px or larger)" required>
+
+			<h2>Background Image URL</h2>
+			<input type="input" name="backgroundImage" placeholder="Background Image URL" required>
+
+			<h2>Instagram Link</h2>
+			<input type="input" name="instagram" placeholder="Instagram Link">
+
+			<h2>Facebook Link</h2>
+			<input type="input" name="facebook" placeholder="Facebook Link">
+
+			<h2>Other Link</h2>
+			<input type="input" name="other" placeholder="Other Link">
+
+			<h2>Biography</h2>
+			<textarea type="input" name="biography" placeholder="Text" required></textarea>
+
+			<button type="submit">Submit!</button>
+			<a href="javascript:history.back()">Go Back</a>
+		</form>
 	</div>
-</form>
+</section>
