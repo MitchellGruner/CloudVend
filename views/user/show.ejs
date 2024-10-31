@@ -14,7 +14,7 @@
 				<img src="<%=profiles.image%>" />
 			</figure>
 		
-			<div>
+			<div class="profile-div">
 				<h1><span><%=profiles.author.username%></span></h1>
 				<p><%=profiles.biography%></p>
 		
@@ -52,7 +52,7 @@
 				<div class="items-container">
 					<% items.forEach((item) => { %>
 						<% if (item.author.id.toString() === profiles.author.id.toString()) { %>
-							<div>
+							<div class="items-container-div">
 								<div class="category-container">
 									<h3><span>Category</span></h3>
 								</div>
@@ -88,7 +88,7 @@
 									<h5><%=item.condition%></h5>
 									<p>"<%=item.description%>" - <%=item.author.username%></p>
 									<hr />
-									<h6>Item available in <span><%=item.author.city%></span></h6>
+									<h6>Item available in&nbsp;<span><%=item.author.city%></span></h6>
 								</div>
 			
 								<a href="../items/<%=item._id%>" class="view-more-btn">View More</a>
