@@ -1,47 +1,37 @@
-<%- include("../partials/header")%>
+<%- include("../partials/header") %>
+<%- include("../partials/menu") %>
 
-<form action="/user/<%=profiles._id%>/update/?_method=PUT" method="POST">
-	<div class="container form">
-		<h1 id="center">Hello, <%=currentUser.username%>.  Edit Your Profile!</h1>
-		<div class="spacing">
-			<input class="form-control" type="input" name="image" value="<%=profiles.image%>">
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="biography" value="<%=profiles.biography%>">
-		</div>
-		<div class="spacing">
-			<input class="form-control" type="input" name="backgroundImage" value="<%=profiles.backgroundImage%>">
-		</div>
-		<%var value0;%>
-		<%if(profiles.other == ""){%>
-			<%value0 = "facebook link";%>
-		<%} else {%>
-			<%value0 = profiles.facebook;%>
-		<%}%>
-		<div class="spacing">
-			<input class="form-control" type="input" name="facebook" value="<%=value0%>">
-		</div>
-		<%var value1;%>
-		<%if(profiles.other == ""){%>
-			<%value1 = "instagram link";%>
-		<%} else {%>
-			<%value1 = profiles.instagram;%>
-		<%}%>
-		<div class="spacing">
-			<input class="form-control" type="input" name="instagram" value="<%=value1%>">
-		</div>
-		<%var value2;%>
-		<%if(profiles.other == ""){%>
-			<%value2 = "other link";%>
-		<%} else {%>
-			<%value2 = profiles.other;%>
-		<%}%>
-		<div class="spacing">
-			<input class="form-control" type="input" name="other" value="<%=value2%>">
-		</div>
+<%
+var value0 = profiles.facebook || "";
+var value1 = profiles.instagram || "";
+var value2 = profiles.other || "";
+%>
+
+<section class="form-container edit-container">
+	<div class="body-container-items-forms container">
+		<h1><span>Edit your profile, <%=currentUser.username%></span></h1>
 		
-		<button class="btn btn-success">Submit!</button>
-		<button class="btn btn-info"><a href="/user">Go Back</a></button>
-	</div>
+		<form action="/user/<%=profiles._id%>/update/?_method=PUT" method="POST">
+			<h2>Profile Image</h2>
+			<input type="input" name="image" value="<%=profiles.image%>">
 
-<%- include("../partials/footer")%>
+			<h2>Background Image</h2>
+			<input type="input" name="backgroundImage" value="<%=profiles.backgroundImage%>">
+
+			<h2>Biography</h2>
+			<input type="input" name="biography" value="<%=profiles.biography%>">
+
+			<h2>Facebook Link</h2>
+			<input type="input" name="facebook" value="<%=value0%>">
+
+			<h2>Instagram Link</h2>
+			<input type="input" name="instagram" value="<%=value1%>">
+
+			<h2>Other Link</h2>
+			<input type="input" name="other" value="<%=value2%>">
+
+			<button type="submit">Submit!</button>
+			<a href="javascript:history.back()">Go Back</a>
+		</form>
+	</div>
+</section>
