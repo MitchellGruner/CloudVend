@@ -1,8 +1,8 @@
 <% if (items.length !== 0) { %>
     <article>
+        <a href="/user">View All Profiles</a>
         <a href="/items/new">Create a New Item</a>
-        <a href="/user">Go to Profiles Page</a>
-        <a href="/items/all">View all Items</a>
+        <a href="/items/all">View All Items</a>
         <% if (currentUser.city) { %>
             <a href="/items/city">View Items in <%=currentUser.city%></a>
         <% } %>
