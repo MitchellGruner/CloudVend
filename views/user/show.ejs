@@ -2,24 +2,22 @@
 <%- include("../partials/menu") %>
 
 <section id="display-items" class="profile-page display-items-container container-fluid">
-	<% if (profiles.backgroundImage) { %>
-		<div id="background-image-div" style="background-image: url('<%=profiles.backgroundImage%>')">
-			<% if (currentUser && profiles.author.id.equals(currentUser._id)) {%>
-				<div id="edit-delete-div">
-					<a href="../user/<%=profiles._id%>/edit">
-						<figure>
-							<img src="/images/edit-icon.png" alt="Edit Icon" />
-						</figure>
-					</a>
-					<a href="../user/<%=profiles._id%>/delete">
-						<figure>
-							<img src="/images/trash-icon.png" alt="Trash Icon" />
-						</figure>
-					</a>
-				</div>
-			<% } %>
-		</div>
-	<% } %>
+	<div id="background-image-div" style="background-image: url('<%=profiles.backgroundImage%>')">
+		<% if (currentUser && profiles.author.id.equals(currentUser._id)) {%>
+			<div id="edit-delete-div">
+				<a href="../user/<%=profiles._id%>/edit">
+					<figure>
+						<img src="/images/edit-icon.png" alt="Edit Icon" />
+					</figure>
+				</a>
+				<a href="../user/<%=profiles._id%>/delete">
+					<figure>
+						<img src="/images/trash-icon.png" alt="Trash Icon" />
+					</figure>
+				</a>
+			</div>
+		<% } %>
+	</div>
 
 	<div class="body-container-items-forms container">
 		<%- include("../partials/navigation") %>
