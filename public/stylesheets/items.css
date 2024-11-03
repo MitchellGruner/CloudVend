@@ -141,6 +141,9 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     padding: 1.1em 1em;
     width: 100%;
 }
+main section#display-items.display-items-container div:nth-child(2) div div.container.profiles-container {
+    padding-top: 3em;
+}
 main section#display-items.display-items-container div:nth-child(2) div div.container > * {
     text-align: left;
 }
@@ -224,6 +227,26 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
     border-bottom-left-radius: 0.5em;
     padding: 0.6em 0.81em;
 }
+main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-relative {
+    position: relative;
+}
+main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3.5em;
+}
+main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute img {
+    border-radius: 50%;
+    object-fit: cover;
+    margin: auto;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #fff;
+    max-width: 100%;
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+}
 main section#display-items.profile-page.display-items-container > div:nth-child(1) div {
     position: fixed;
     margin-top: 4.7em;
@@ -298,6 +321,13 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
     main section#display-items.profile-page.display-items-container > div:nth-child(2) > div > div {
         margin: 1.2em 1.9em;
     }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute {
+        bottom: -3.3em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute img {
+        width: 200px;
+        height: 200px;
+    }
 }
 @media (min-width: 576px) {
     main section#display-items.display-items-container > div:nth-child(2) {
@@ -353,6 +383,13 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
     main section#display-items.profile-page.display-items-container > div:nth-child(1) div {
         margin-top: 5.7em;
         margin-right: 1.2em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute {
+        bottom: -4em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute img {
+        width: 230px;
+        height: 230px;
     }
 }
 @media (min-width: 768px) {
@@ -429,6 +466,13 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
     main section#display-items.profile-page.display-items-container > div:nth-child(2) > div > div.items-container {
         margin: 1.2em auto 1em;
     }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute {
+        bottom: -3.5em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute img {
+        width: 200px;
+        height: 200px;
+    }
 }
 @media (min-width: 992px) {
     main section#display-items.profile-page.display-items-container > div:nth-child(2) > div:nth-child(2) {
@@ -496,6 +540,18 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
     main section#display-items.display-items-container div:nth-child(2) div div div.image-container div,
     main section#display-items.profile-page.display-items-container > div:nth-child(1) div {
         width: 5.5em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute {
+        bottom: -3.5em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute img {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media (max-width: 1199px) {
+    main section#display-items.display-items-container div:nth-child(2) div div.container.profiles-container p {
+        margin-bottom: 3.2em;
     }
 }
 @media (min-width: 1200px) {
@@ -571,6 +627,13 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
     main section#display-items.profile-page.display-items-container > div:nth-child(1) div {
         margin-top: 6em;
         margin-right: 4.2em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute {
+        bottom: -3em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute img {
+        width: 175px;
+        height: 175px;
     }
 }
 @media (min-width: 1400px) {
@@ -659,6 +722,13 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
     main section#display-items.display-items-container div:nth-child(2) div div div.image-container div,
     main section#display-items.profile-page.display-items-container > div:nth-child(1) div {
         width: 6.4em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute {
+        bottom: -3.5em;
+    }
+    main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute img {
+        width: 200px;
+        height: 200px;
     }
 }
 @media (min-width: 1600px) {
