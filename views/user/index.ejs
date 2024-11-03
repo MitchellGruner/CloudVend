@@ -1,66 +1,53 @@
 <%- include("../partials/header") %>
-<%var created = 0;%>
-<%var prof_id;%>
 
-<%profiles.forEach((profile) => {%>
-	<%if(currentUser && profile.author.id.equals(currentUser._id)){%>
-		<%created++;%>
-		<%prof_id = profile._id%>
-	<%}%>
-<%});%>
-<div class="menu">
-	<ul class="list-group">
-		<li class="list-group-item"><p>Welcome, <%=currentUser.username%></p></li>
-  		<li class="list-group-item"><p><a href="/items/new">Create a New Item</a></p></li>
-		<%if(created == 1){%>
-			<li class="list-group-item"><p><a href="/user/<%=prof_id%>">Visit Profile</a></p></li>
-		<%} else {%>
-			<li class="list-group-item"><p><a href="/user/new">Create a New Profile</a></p></li>
-		<%}%>
-		<li class="list-group-item"><p><a href="/items">View Items From <%=currentUser.city%></a></p></li>
-		<li class="list-group-item"><p><a href="/items/all">View all Items</a></p></li>
-		<li class="list-group-item"><p><a href="#"></a>Profiles From <%=currentUser.city%></p></li>
- 		<li class="list-group-item"><p><a href="/">Go Back</a></p></li>
-	</ul>
-</div>
+<!-- display items -->
+<section id="display-items" class="display-items-container container-fluid">
+	<%- include("../partials/menu") %>
 
-<div class="container">
-	<div class="row text-center">
-		<div class="col-md-9">
-			<%profiles.forEach((profile) => { %>
-				<div class="center">
-					<div class="box">
-						<%if(currentUser.city == profile.author.city){%>
-							<div class="caption-full">
-								<img id="profiles" src="<%=profile.image%>">
-								<div class="align left">
-									<h3>Created by <%=profile.author.username%></h3>
-									<h5>Lives in <%=profile.author.city%></h5>
-									<p><%=profile.biography%></p>
-										<div class="btn-group btn-group-justified" role="group">
-											<%if(currentUser && profile.author.id.equals(currentUser._id)){%>
-												<div class="btn-group" role="group">
-													<button type="button" class="btn btn-sm btn-info btn-default"><a 																	href="/user/<%=profile._id%>">View More</a></button>
-													</div>
-												<div class="btn-group" role="group">
-													<button type="button" class="btn btn-sm btn-success btn-default"><a 																	href="/user/<%=profile._id%>/edit">Edit</a></button>
-												</div>
-												<div class="btn-group" role="group">
-													<button type="button" class="btn btn-sm btn-danger btn-default"><a 																		href="/user/<%=profile._id%>/delete">Delete</a></button>
-												</div>
-												<%} else{%>
-												<div>
-													<button type="button" class="btn btn-sm btn-info btn-default"><a 																		href="/user/<%=profile._id%>">View More</a></button>
-												</div>
-											<%}%>
-										</div>
-								</div>
+    <div class="body-container-items-forms container">
+        <%- include("../partials/navigation") %>
+
+        <div class="items-container">
+            <%profiles.forEach((profile) => { %>
+                <div>
+					<div class="category-container"></div>
+
+					<div class="image-container">
+						<figure class="background-image-relative">
+							<img src="<%=profile.backgroundImage%>" />
+						</figure>
+
+						<figure class="background-image-absolute">
+							<img src="<%=profile.image%>" />
+						</figure>
+
+						<% if (currentUser && profile.author.id.equals(currentUser._id)) {%>
+							<div>
+								<a href="../user/<%=profile._id%>/edit">
+									<figure>
+										<img src="/images/edit-icon.png" alt="Edit Icon" />
+									</figure>
+								</a>
+								<a href="../user/<%=profile._id%>/delete">
+									<figure>
+										<img src="/images/trash-icon.png" alt="Trash Icon" />
+									</figure>
+								</a>
 							</div>
-						<%}%>
+						<% } %>
 					</div>
-				</div>
-			<br>
-			<%});%>
-		</div>
-	</div>
-</div>
+                    
+                    <div class="container profiles-container">
+                        <div>
+                            <h2><span><%=profile.author.username%></span></h2>
+                        </div>
+                        <h3>Lives in <%=profile.author.city%></h3>
+                        <p>"<%=profile.biography%>"</p>
+                    </div>
+
+                    <a href="../user/<%=profile._id%>" class="view-more-btn">Visit Profile</a>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</section>

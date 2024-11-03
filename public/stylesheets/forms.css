@@ -90,10 +90,10 @@ main section.form-container div.body-container-items-forms form a:hover {
 main section.form-container div.body-container-items-forms form h2 {
     color: #0F4C81;
     text-align: left;
+    font-weight: bolder;
     font-size: 1em;
     margin: 0.81em 0em 0em;
 }
-
 main section#edit-container.form-container {
     height: 100vh;
 }
