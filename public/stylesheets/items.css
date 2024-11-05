@@ -161,7 +161,10 @@ main section#display-items.display-items-container div:nth-child(2) div div.cont
     text-align: left;
 }
 main section#display-items.display-items-container div:nth-child(2) div div.container div:last-of-type {
-    margin: 1.2em auto 1em;
+    margin: 0.2em auto 1em;
+}
+main section#display-items.display-items-container div:nth-child(2) div div.container div:last-of-type.created-by-div {
+    margin: 2.2em auto 1em;
 }
 main section#display-items.display-items-container div:nth-child(2) div a.view-more-btn {
     position: absolute;
@@ -264,29 +267,45 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
 main section#display-items.profile-page.display-items-container > div:nth-child(2) > div > div.items-container > div {
     flex-basis: 100%;
 }
-main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div,
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container,
 main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a {
     display: flex;
     flex-wrap: wrap;
 }
-main section#display-items.display-items-container.show-item div:nth-child(2) div div.container p {
-    flex-basis: 20%;
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div {
+    align-items: center;
+}
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > p {
+    display: contents;
+    text-decoration: underline;
+}
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a h5,
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a:hover h5 {
+    transition: 0.5s ease-in-out;
 }
 main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a {
-    flex-basis: 80%;
+    flex-direction: row;
     margin: auto;
-    margin-bottom: 1.2em;
+    text-decoration: none;
+    margin: 0.81em auto auto 1.8em;
+}
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a:hover h5 {
+    color: #000;
 }
 main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a figure img {
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid #000;
     max-width: 100%;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
 }
-main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > h5  {
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div h5  {
+    color: #0F4C81;
     font-weight: bolder;
+    text-decoration: underline;
+    margin-left: 0.5em;
+    font-size: 1em;
 }
 
 @media (min-width: 400px) {
@@ -351,6 +370,17 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
     main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute img {
         width: 200px;
         height: 200px;
+    }
+    main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a {
+        margin: 0.9em auto auto 2em;
+    }
+    main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a figure img {
+        width: 57px;
+        height: 57px;
+    }
+    main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div h5  {
+        margin-left: 0.55em;
+        font-size: 1.1em;
     }
 }
 @media (min-width: 576px) {
@@ -658,6 +688,17 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
     main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute img {
         width: 175px;
         height: 175px;
+    }
+    main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a {
+        margin: 1.1em auto 0.81em 2.4em;
+    }
+    main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a figure img {
+        width: 60px;
+        height: 60px;
+    }
+    main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div h5  {
+        margin-left: 0.61em;
+        font-size: 1.2em;
     }
 }
 @media (min-width: 1400px) {
