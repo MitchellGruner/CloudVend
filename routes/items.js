@@ -3,6 +3,7 @@ var express = require('express'),
 	passport = require('passport'),
 	User = require("../models/user"),
 	Items = require("../models/items"),
+	Profile = require("../models/profile"),
 	middleware = require("../middleware");
 
 // main page with all items from a specific city.
@@ -34,25 +35,51 @@ router.get("/items/new", (req, res) => {
 
 // post new item to database.
 router.post("/items", (req, res) => {
-	var name = req.body.name;
-	var image = req.body.image;
-	var price = req.body.price;
-	var condition = req.body.condition;
-	var description = req.body.description;
-	var author = {
-		id: req.user._id,
-		username: req.user.username,
-		city: req.user.city,
-		image: req.user.image
-	};
-	var newItem = {name: name, image: image, price: price, condition: condition, description: description, author: author};
-	Items.create(newItem, (err, items) => {
-		if(err){
-			console.log(err);
-		} else {
-			res.redirect("items");
-		}
-	});
+    var name = req.body.name;
+    var image = req.body.image;
+    var price = req.body.price;
+    var condition = req.body.condition;
+    var description = req.body.description;
+    var author = {
+        id: req.user._id,
+        username: req.user.username,
+        city: req.user.city,
+        image: req.user.image
+    };
+
+    // find the profile associated with the user.
+    Profile.findOne({ user: req.user._id }, (err, foundProfile) => {
+        if (err) {
+            return res.redirect("back");
+        }
+
+        if (!foundProfile) {
+            return res.redirect("back");
+        }
+
+        var profile = {
+            id: foundProfile._id,
+            image: foundProfile.image
+        };
+
+        var newItem = {
+            name: name,
+            image: image,
+            price: price,
+            condition: condition,
+            description: description,
+            author: author,
+            profile: profile
+        };
+
+        Items.create(newItem, (err, items) => {
+            if (err) {
+                console.log("Error creating item:", err);
+            } else {
+                res.redirect("items");
+            }
+        });
+    });
 });
 
 // go show more of an item.
