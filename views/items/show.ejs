@@ -43,15 +43,16 @@
 					</div>
 					<h3><%=items.condition%></h3>
 					<p>"<%=items.description%>"</p>
-					<a href="/user/<%=items.profile.id%>">
-						<p>Created by</p>
-						<div>
+
+					<div class="created-by-div">
+						<p>Created by:</p>
+						<a href="/user/<%=items.profile.id%>">
 							<figure>
 								<img src="<%=items.profile.image%>" />
 							</figure>
 							<h5><%=items.author.username%></h5>
-						</div>
-					</a>
+						</a>
+					</div>
 
 					<hr />
 					<h4>Item available in&nbsp;<span><%=items.author.city%></span></h4>
