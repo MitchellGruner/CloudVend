@@ -15,6 +15,13 @@ var itemsSchema = new mongoose.Schema({
 	  	city: String,
 		image: String
   	},
+	profile: {
+		id: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Profile"
+		},
+		image: String,
+	},
     comments: [
       {
          type: mongoose.Schema.Types.ObjectId,
