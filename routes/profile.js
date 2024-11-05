@@ -25,6 +25,7 @@ router.post("/user", (req, res) => {
     var facebook = req.body.facebook;
     var instagram = req.body.instagram;
     var other = req.body.other;
+    var user = req.user._id;
     var author = {
         id: req.user._id,
         username: req.user.username,
@@ -33,7 +34,7 @@ router.post("/user", (req, res) => {
         image: req.user.image
     };
     var newProfile = {image: image, biography: biography, backgroundImage: backgroundImage, facebook: facebook, 
-                      instagram: instagram, other: other, author: author};
+                      instagram: instagram, other: other, user: user, author: author};
 
     Profile.create(newProfile, (err, profile) => {
         if (err) {
