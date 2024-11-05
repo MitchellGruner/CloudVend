@@ -7,7 +7,7 @@ var express = require('express'),
 	Profile = require("../models/profile");
 
 // show profile page.
-router.get("/user", middleware.isLoggedIn, (req, res) => {
+router.get("/user", middleware.isLoggedIn, middleware.checkProfile, (req, res) => {
 	Profile.find({}, (err, profile) => {
 		if(err){
 			console.log(err);
@@ -54,12 +54,12 @@ router.post("/user", (req, res) => {
 });
 
 // get to profile creation page.
-router.get("/user/new", (req, res) => {
+router.get("/user/new", middleware.checkProfile, (req, res) => {
 	res.render("user/new");
 });
 
 // show profile.
-router.get("/user/:id", (req, res) => {
+router.get("/user/:id", middleware.checkProfile, (req, res) => {
     Profile.findById(req.params.id, (err, profile) => {
         if(err){
             res.redirect("/items");

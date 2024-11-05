@@ -7,7 +7,7 @@ var express = require('express'),
 	middleware = require("../middleware");
 
 // main page with all items from a specific city.
-router.get("/items", (req, res) => {
+router.get("/items", middleware.checkProfile, (req, res) => {
 	Items.find({}, (err, items) => {
 		if(err){
 			console.log(err);
@@ -18,7 +18,7 @@ router.get("/items", (req, res) => {
 });
 
 // main page with all items regardless of city.
-router.get("/items/all", (req, res) => {
+router.get("/items/all", middleware.checkProfile, (req, res) => {
 	Items.find({}, (err, items) => {
 		if(err){
 			console.log(err);
@@ -29,7 +29,7 @@ router.get("/items/all", (req, res) => {
 });
 
 // new item creation page.
-router.get("/items/new", (req, res) => {
+router.get("/items/new", middleware.checkProfile, (req, res) => {
 	res.render("items/new");
 });
 
@@ -83,7 +83,7 @@ router.post("/items", (req, res) => {
 });
 
 // go show more of an item.
-router.get("/items/:id", (req, res) => {
+router.get("/items/:id", middleware.checkProfile, (req, res) => {
 	Items.findById(req.params.id).populate("comments").exec((err, items) => {
 		if(err){
 			res.redirect("/items");
@@ -94,7 +94,7 @@ router.get("/items/:id", (req, res) => {
 });
 
 // edit an item.
-router.get("/items/:id/edit", (req, res) => {
+router.get("/items/:id/edit", middleware.checkProfile, (req, res) => {
 	Items.findById(req.params.id, (err, items) => {
 		if(err){
 			console.log(err);
@@ -123,7 +123,7 @@ router.put("/items/:id/update", (req, res) => {
 });
 
 // delete an item.
-router.get("/items/:id/delete", (req, res) => {
+router.get("/items/:id/delete", middleware.checkProfile, (req, res) => {
 	Items.findByIdAndRemove(req.params.id, (err) => {
 		if(err){
 			res.redirect("/items");
