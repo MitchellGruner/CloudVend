@@ -187,7 +187,7 @@ main section#display-items.profile-page.display-items-container div:nth-child(2)
 }
 main section#display-items.display-items-container div:nth-child(2) div div.container p {
     color: #1E1E1E;
-    margin: 1.2em 0em 1.4em;
+    margin-top: 1.2em;
     font-size: 1em;
 }
 main section#display-items.display-items-container div:nth-child(2) div div.container h4,
@@ -264,6 +264,30 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
 main section#display-items.profile-page.display-items-container > div:nth-child(2) > div > div.items-container > div {
     flex-basis: 100%;
 }
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div,
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a {
+    display: flex;
+    flex-wrap: wrap;
+}
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container p {
+    flex-basis: 20%;
+}
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a {
+    flex-basis: 80%;
+    margin: auto;
+    margin-bottom: 1.2em;
+}
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > a figure img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #000;
+    max-width: 100%;
+    width: 60px;
+    height: 60px;
+}
+main section#display-items.display-items-container.show-item div:nth-child(2) div div.container > div > h5  {
+    font-weight: bolder;
+}
 
 @media (min-width: 400px) {
     main section#display-items.profile-page.display-items-container > div:nth-child(2) > div:nth-child(2) {
@@ -298,7 +322,7 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
         font-size: 1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container p {
-        margin: 1.3em 0em 1.5em;
+        margin-top: 1.3em;
         font-size: 1.1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4,
@@ -359,7 +383,7 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
         font-size: 1.1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container p {
-        margin: 1.4em 0em 1.6em;
+        margin-top: 1.4em;
         font-size: 1.2em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4,
@@ -440,11 +464,11 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
         font-size: 1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container p {
-        margin: 1.2em 0em 1.4em;
+        margin-top: 1.2em;
         font-size: 1em;
     }
     main section#display-items.display-items-container.show-item div:nth-child(2) div div.container p {
-        margin: 1.3em 0em 1.5em;
+        margin-top: 1.3em;
         font-size: 1.1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4,
@@ -602,11 +626,11 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
         font-size: 1.1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container p {
-        margin: 1.3em 0em 1.5em;
+        margin-top: 1.3em;
         font-size: 1.1em;
     }
     main section#display-items.display-items-container.show-item div:nth-child(2) div div.container p {
-        margin: 1.4em 0em 1.6em;
+        margin-top: 1.4em;
         font-size: 1.2em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4,
@@ -687,11 +711,11 @@ main section#display-items.profile-page.display-items-container > div:nth-child(
         font-size: 1.3em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container p {
-        margin: 1.5em 0em 1.7em;
+        margin-top: 1.5em;
         font-size: 1.3em;
     }
     main section#display-items.display-items-container.show-item div:nth-child(2) div div.container p {
-        margin: 1.6em 0em 1.8em;
+        margin-top: 1.6em;
         font-size: 1.4em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4,
