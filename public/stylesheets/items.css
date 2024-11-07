@@ -555,13 +555,58 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
         position: fixed;
         box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
         border-radius: 1em;
-        padding: 1.1em 1.8em;
     }
-    main section#display-items.display-items-container > div:nth-child(2) article a,
-    main section#display-items.display-items-container > div:nth-child(2) article a:hover {
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) {
+        border-bottom: 1px solid #000;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) a h1,
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) a:hover h1 {
         transition: 0.5s ease-in-out;
     }
-    main section#display-items.display-items-container > div:nth-child(2) article a {
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) a h1 {
+        font-weight: bolder;
+        font-size: 1em;
+        margin: 0em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) a:hover h1 {
+        color: #000;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) a h1 span {
+        font-weight: bolder;
+        background-size: 100% 15%;
+        background-repeat: repeat-x;
+        background-position: left 0% bottom 10%;
+        background-image: linear-gradient(179deg,#0F4C81 0%, #0F4C81 50%, transparent 54%, transparent 100%);
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) figure {
+        margin: auto 0.7em auto 1.5em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) figure img {
+        border-radius: 50%;
+        object-fit: cover;
+        margin: auto;
+        border: 1px solid #000;
+        max-width: 100%;
+        width: 45px;
+        height: 45px;
+        z-index: 1;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) a.create-a-new-profile {
+        margin-left: 2.3em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(2) {
+        padding: 1.1em 1.8em;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div a,
+    main section#display-items.display-items-container > div:nth-child(2) article div a:hover {
+        transition: 0.5s ease-in-out;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div a {
         display: table;
         color: #0F4C81;
         font-weight: bolder;
@@ -570,7 +615,7 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
         font-size: 1.1em;
         margin: 0.5em;
     }
-    main section#display-items.display-items-container > div:nth-child(2) article a:hover {
+    main section#display-items.display-items-container > div:nth-child(2) article div a:hover {
         color: #1E1E1E;
     }
     main section#display-items.display-items-container > div:nth-child(2) > div {
@@ -615,10 +660,10 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
     main section#display-items.display-items-container > div:nth-child(2) > div > div {
         margin: 0em auto 2.6em;
     }
-    main section#display-items.display-items-container > div:nth-child(2) article {
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(2) {
         padding: 1.2em 2em;
     }
-    main section#display-items.display-items-container > div:nth-child(2) article a {
+    main section#display-items.display-items-container > div:nth-child(2) article div a {
         font-size: 1.2em;
         margin: 0.55em;
     }
@@ -711,10 +756,10 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
     main section#display-items.display-items-container.show-item > div:nth-child(2) > div > div {
         flex-basis: 75%;
     }
-    main section#display-items.display-items-container > div:nth-child(2) article {
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(2) {
         padding: 1.4em 2.4em;
     }
-    main section#display-items.display-items-container > div:nth-child(2) article a {
+    main section#display-items.display-items-container > div:nth-child(2) article div a {
         font-size: 1.3em;
         margin: 0.61em;
     }
@@ -794,6 +839,10 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
     main section#display-items.display-items-container div:nth-child(2) div div div.image-container figure.background-image-absolute img {
         width: 200px;
         height: 200px;
+    }
+    main section#display-items.display-items-container > div:nth-child(2) article div:nth-child(1) figure img {
+        width: 50px;
+        height: 50px;
     }
 }
 @media (min-width: 1600px) {
