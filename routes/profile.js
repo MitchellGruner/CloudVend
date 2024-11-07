@@ -12,7 +12,12 @@ router.get("/user", middleware.isLoggedIn, middleware.checkProfile, (req, res) =
 		if(err){
 			console.log(err);
 		} else {
-			res.render("user/index", {profiles: profile});
+			res.render("user/index", {
+                profiles: profile,
+                profileExists: res.locals.profileExists,
+                profileId: res.locals.profileId,
+                profileImage: res.locals.profileImage
+            });
 		}
 	});
 });
@@ -33,8 +38,16 @@ router.post("/user", (req, res) => {
         email: req.user.email,
         image: req.user.image
     };
-    var newProfile = {image: image, biography: biography, backgroundImage: backgroundImage, facebook: facebook, 
-                      instagram: instagram, other: other, user: user, author: author};
+    var newProfile = {
+        image: image,
+        biography: biography,
+        backgroundImage: backgroundImage,
+        facebook: facebook, 
+        instagram: instagram,
+        other: other,
+        user: user,
+        author: author
+    };
 
     Profile.create(newProfile, (err, profile) => {
         if (err) {
@@ -46,7 +59,13 @@ router.post("/user", (req, res) => {
                 if(err){
                     res.redirect("/items");
                 } else {
-                    res.render("user/show", {profiles: profile, items: items});
+                    res.render("user/show", {
+                        profiles: profile,
+                        items: items,
+                        profileExists: true,
+                        profileId: profile._id,
+                        profileImage: profile.image
+                    });
                 }
             });
         }
@@ -70,7 +89,13 @@ router.get("/user/:id", middleware.checkProfile, (req, res) => {
                 if(err){
                     res.redirect("/items");
                 } else {
-                    res.render("user/show", {profiles: profile, items: items});
+                    res.render("user/show", {
+                        profiles: profile,
+                        items: items,
+                        profileExists: res.locals.profileExists,
+                        profileId: res.locals.profileId,
+                        profileImage: res.locals.profileImage
+                    });
                 }
             });
         }

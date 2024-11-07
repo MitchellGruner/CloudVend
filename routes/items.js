@@ -8,13 +8,18 @@ var express = require('express'),
 
 // main page with all items from a specific city.
 router.get("/items", middleware.checkProfile, (req, res) => {
-	Items.find({}, (err, items) => {
-		if(err){
-			console.log(err);
-		} else {
-			res.render("items/index", {items: items});
-		}
-	});
+    Items.find({}, (err, items) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("items/index", {
+                items: items,
+                profileExists: res.locals.profileExists,
+                profileId: res.locals.profileId,
+				profileImage: res.locals.profileImage
+            });
+        }
+    });
 });
 
 // main page with all items regardless of city.
@@ -23,7 +28,12 @@ router.get("/items/all", middleware.checkProfile, (req, res) => {
 		if(err){
 			console.log(err);
 		} else {
-			res.render("items/indexAll", {items: items});
+			res.render("items/indexAll", {
+                items: items,
+                profileExists: res.locals.profileExists,
+                profileId: res.locals.profileId,
+				profileImage: res.locals.profileImage
+            });
 		}
 	});
 });
@@ -88,7 +98,12 @@ router.get("/items/:id", middleware.checkProfile, (req, res) => {
 		if(err){
 			res.redirect("/items");
 		} else {
-			res.render("items/show", {items: items})
+			res.render("items/show", {
+				items: items,
+                profileExists: res.locals.profileExists,
+                profileId: res.locals.profileId,
+				profileImage: res.locals.profileImage
+			});
 		}
 	});
 });
@@ -99,7 +114,12 @@ router.get("/items/:id/edit", middleware.checkProfile, (req, res) => {
 		if(err){
 			console.log(err);
 		} else {
-			res.render("items/edit", {items: items});	
+			res.render("items/edit", {
+				items: items,
+                profileExists: res.locals.profileExists,
+                profileId: res.locals.profileId,
+				profileImage: res.locals.profileImage
+			});	
 		}
 	});
 });
