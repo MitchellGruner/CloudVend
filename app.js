@@ -15,6 +15,7 @@ const express = require('express'),
 	  helmet = require('helmet');
 	  session = require('express-session'),
 	  MongoDBStore = require("connect-mongo")(session);
+	  middleware = require('./middleware/index');
 
 // connect to database.
 const dbUrl = process.env.DB_URL;
@@ -23,9 +24,9 @@ mongoose.connect(dbUrl, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 }).then(() => {
-	console.log('Connected to DB')
+	console.log('Connected to DB');
 }).catch(error => {
-	console.log(error.message)
+	console.log(error.message);
 });
 
 // connect routes.
@@ -46,6 +47,8 @@ app.use(require('express-session')({
 	resave: false,
 	saveUninitialized: false
 }));
+
+app.use(middleware.setCurrentUser);
 
 app.use(passport.initialize());
 app.use(passport.session());

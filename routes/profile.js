@@ -7,12 +7,17 @@ var express = require('express'),
 	Profile = require("../models/profile");
 
 // show profile page.
-router.get("/user", middleware.isLoggedIn, (req, res) => {
+router.get("/user", middleware.isLoggedIn, middleware.checkProfile, (req, res) => {
 	Profile.find({}, (err, profile) => {
 		if(err){
 			console.log(err);
 		} else {
-			res.render("user/index", {profiles: profile});
+			res.render("user/index", {
+                profiles: profile,
+                profileExists: res.locals.profileExists,
+                profileId: res.locals.profileId,
+                profileImage: res.locals.profileImage
+            });
 		}
 	});
 });
@@ -25,6 +30,7 @@ router.post("/user", (req, res) => {
     var facebook = req.body.facebook;
     var instagram = req.body.instagram;
     var other = req.body.other;
+    var user = req.user._id;
     var author = {
         id: req.user._id,
         username: req.user.username,
@@ -32,8 +38,16 @@ router.post("/user", (req, res) => {
         email: req.user.email,
         image: req.user.image
     };
-    var newProfile = {image: image, biography: biography, backgroundImage: backgroundImage, facebook: facebook, 
-                      instagram: instagram, other: other, author: author};
+    var newProfile = {
+        image: image,
+        biography: biography,
+        backgroundImage: backgroundImage,
+        facebook: facebook, 
+        instagram: instagram,
+        other: other,
+        user: user,
+        author: author
+    };
 
     Profile.create(newProfile, (err, profile) => {
         if (err) {
@@ -45,7 +59,13 @@ router.post("/user", (req, res) => {
                 if(err){
                     res.redirect("/items");
                 } else {
-                    res.render("user/show", {profiles: profile, items: items});
+                    res.render("user/show", {
+                        profiles: profile,
+                        items: items,
+                        profileExists: true,
+                        profileId: profile._id,
+                        profileImage: profile.image
+                    });
                 }
             });
         }
@@ -53,12 +73,12 @@ router.post("/user", (req, res) => {
 });
 
 // get to profile creation page.
-router.get("/user/new", (req, res) => {
+router.get("/user/new", middleware.checkProfile, (req, res) => {
 	res.render("user/new");
 });
 
 // show profile.
-router.get("/user/:id", (req, res) => {
+router.get("/user/:id", middleware.checkProfile, (req, res) => {
     Profile.findById(req.params.id, (err, profile) => {
         if(err){
             res.redirect("/items");
@@ -69,7 +89,13 @@ router.get("/user/:id", (req, res) => {
                 if(err){
                     res.redirect("/items");
                 } else {
-                    res.render("user/show", {profiles: profile, items: items});
+                    res.render("user/show", {
+                        profiles: profile,
+                        items: items,
+                        profileExists: res.locals.profileExists,
+                        profileId: res.locals.profileId,
+                        profileImage: res.locals.profileImage
+                    });
                 }
             });
         }

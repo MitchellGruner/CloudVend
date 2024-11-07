@@ -28,7 +28,7 @@ router.post("/register", (req, res) => {
 				return res.render("register");
 			} else {
 				passport.authenticate("local")(req, res, () => {
-					res.redirect("items");
+					res.redirect("items/all");
 				});
     		}
   		});
@@ -41,7 +41,7 @@ router.get("/login", (req, res) => {
 
 // login logic.
 router.post("/login", passport.authenticate("local", {
-		successRedirect: "/items",
+		successRedirect: "/items/all",
 		failureRedirect: "/register"
 	}), (req, res) => {	
 });
