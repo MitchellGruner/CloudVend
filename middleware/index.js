@@ -13,17 +13,23 @@ middlewareObj.isLoggedIn = function(req, res, next){
 
 // middleware for checking if a profile exists
 middlewareObj.checkProfile = function(req, res, next) {
-    if (req.isAuthenticated()) { // Ensure the user is authenticated
+    if (req.isAuthenticated()) { // ensure the user is authenticated
         Profile.findOne({ user: req.user._id }, (err, foundProfile) => {
-            if (err) {
+            if (err || !foundProfile) {
                 res.locals.profileExists = false;
+                res.locals.profileId = null;
+                res.locals.profileImage = null;
             } else {
-                res.locals.profileExists = !!foundProfile;
+                res.locals.profileExists = true;
+                res.locals.profileId = foundProfile._id;
+                res.locals.profileImage = foundProfile.image
             }
             next();
         });
     } else {
         res.locals.profileExists = false;
+        res.locals.profileId = null;
+        res.locals.profileImage = null;
         next();
     }
 };
