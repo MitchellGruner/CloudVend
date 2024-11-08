@@ -79,6 +79,10 @@
 			</div>
 		<% } %>
 
-		<a href="/items/<%=items._id%>/comments/new" class="comment-link">Leave a Comment</a>
+		<% if (profileExists) { %>
+			<a href="/items/<%=items._id%>/comments/new" class="comment-link">Leave a Comment</a>
+		<% } else { %>
+			<h1 class="comment-link"><a href="/user/new">Create your profile</a> in order to leave a comment</h1>
+		<% } %>
 	</div>
 </section>
