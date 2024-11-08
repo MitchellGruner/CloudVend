@@ -67,12 +67,19 @@
 
 				<%items.comments.forEach((comment) => {%>
 					<div id="comments-container-div" class="comments-container-div">
-						<p>"<%=comment.text%>" - <span><%=comment.author.username%></span></p>
+						<p><%= comment.text %> - 
+							<a href="/user/<%=profileId%>">
+								<figure>
+									<img src="<%=profileImage%>" />
+								</figure>
+								<h1><%= comment.author.username %></h1>
+							</a>
+						</p>
 						
 						<%if(currentUser && comment.author.id.equals(currentUser._id)){%>
 							<form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
 								<button>Delete</button>
-							</form>	
+							</form>
 						<%}%>
 					</div>
 				<%});%>
