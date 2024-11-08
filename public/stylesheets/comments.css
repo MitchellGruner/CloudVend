@@ -8,7 +8,8 @@ section#display-items.display-items-container.show-item .body-container-items-fo
 }
 section#display-items.display-items-container.show-item .body-container-items-forms .comments-container h1,
 section#display-items.display-items-container.show-item .body-container-items-forms .comments-container span,
-section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link {
+section#display-items.display-items-container.show-item .body-container-items-forms .comment-link,
+section#display-items.display-items-container.show-item .body-container-items-forms .comment-link a {
     font-weight: bolder;
 }
 main section#display-items.display-items-container > div:nth-child(2) > div > div#comments-container-div.comments-container-div {
@@ -43,7 +44,7 @@ section#display-items.display-items-container.show-item .body-container-items-fo
     margin: 0.55em auto;
 }
 section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button,
-section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link {
+section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
     text-decoration: underline;
 }
 section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
@@ -52,10 +53,23 @@ section#display-items.display-items-container.show-item .body-container-items-fo
     color: #FF0000;
     border: none;
 }
-section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link {
+section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
     color: #0F4C81;
     margin: auto;
     font-size: 1em;
+}
+section#display-items.display-items-container.show-item .body-container-items-forms h1.comment-link {
+    color: #000;
+}
+section#display-items.display-items-container.show-item .body-container-items-forms .comment-link a {
+    color: #000;
+    font-style: italic;
+}
+section#display-items.display-items-container.show-item .body-container-items-forms h1.comment-link a {
+    color: #0F4C81;
+}
+section#display-items.display-items-container.show-item .body-container-items-forms h1.comment-link a:hover {
+    color: #000;
 }
 
 @media (min-width: 400px) {
@@ -83,7 +97,7 @@ section#display-items.display-items-container.show-item .body-container-items-fo
     section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
         font-size: 1.1em;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
         font-size: 1.1em;
     }
 }
@@ -112,7 +126,7 @@ section#display-items.display-items-container.show-item .body-container-items-fo
     section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
         font-size: 1.2em;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
         font-size: 1.2em;
     }
 }
@@ -141,8 +155,10 @@ section#display-items.display-items-container.show-item .body-container-items-fo
     }
     section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button,
     section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button:hover,
-    section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link,
-    section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link:hover {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comment-link,
+    section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link:hover,
+    section#display-items.display-items-container.show-item .body-container-items-forms h1.comment-link a,
+    section#display-items.display-items-container.show-item .body-container-items-forms h1.comment-link a:hover {
         transition: 0.5s ease-in-out;
     }
     section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
@@ -152,7 +168,7 @@ section#display-items.display-items-container.show-item .body-container-items-fo
     section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link:hover {
         color: #1E1E1E;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
         font-size: 1.3em;
         padding-left: 22em;
     }
@@ -182,7 +198,7 @@ section#display-items.display-items-container.show-item .body-container-items-fo
     section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
         font-size: 1.4em;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
         font-size: 1.4em;
         padding-left: 23em;
     }
@@ -212,7 +228,7 @@ section#display-items.display-items-container.show-item .body-container-items-fo
     section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
         font-size: 1.5em;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
         font-size: 1.5em;
         padding-left: 24em;
     }
