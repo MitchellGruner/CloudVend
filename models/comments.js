@@ -9,7 +9,14 @@ var commentSchema = new mongoose.Schema({
 		},
 		username: String,
 		city: String
-	}
+	},
+	profile: {
+		id: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Profile"
+		},
+		image: String,
+	},
 });
 
 module.exports = mongoose.model("Comment", commentSchema);
