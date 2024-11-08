@@ -71,6 +71,14 @@ section#display-items.display-items-container.show-item .body-container-items-fo
 section#display-items.display-items-container.show-item .body-container-items-forms h1.comment-link a:hover {
     color: #000;
 }
+main section#display-items.display-items-container > div:nth-child(2) > div > div#comments-container-div.comments-container-div div p a figure img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #000;
+    max-width: 100%;
+    width: 55px;
+    height: 55px;
+}
 
 @media (min-width: 400px) {
     main section#display-items.display-items-container > div:nth-child(2) > div.comments-container {
