@@ -65,24 +65,36 @@
 				<h1>Comments</h1>
 				<hr />
 
-				<%items.comments.forEach((comment) => {%>
-					<div id="comments-container-div" class="comments-container-div">
-						<p><%= comment.text %> - 
-							<a href="/user/<%=profileId%>">
-								<figure>
-									<img src="<%=profileImage%>" />
-								</figure>
-								<h1><%= comment.author.username %></h1>
-							</a>
-						</p>
+				<div class="comments-container-div">
+					<%items.comments.forEach((comment) => {%>
+						<% if (items.author.id.toString() === comment.author.id.toString()) { %> 
+							<div class="author-created-comment">
+						<% } else { %>
+							<div>
+						<% } %>
+								<p><%= comment.text %></p>
+								<a href="/user/<%=comment.author.profileId%>">
+									<div>
+										<figure>
+											<img src="<%=comment.author.profileImage%>" />
+										</figure>
+										<h2><%= comment.author.username %></h2>
+									</div>
+								</a>
 						
-						<%if(currentUser && comment.author.id.equals(currentUser._id)){%>
-							<form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
-								<button>Delete</button>
-							</form>
-						<%}%>
-					</div>
-				<%});%>
+								<%if(currentUser && comment.author.id.equals(currentUser._id)){%>
+									<div>
+										<form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
+											<button>Edit</button>
+										</form>
+										<form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
+											<button>Delete</button>
+										</form>
+									</div>
+								<%}%>
+							</div>
+					<%});%>
+				</div>
 			</div>
 		<% } %>
 
