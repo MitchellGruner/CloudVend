@@ -84,7 +84,7 @@ router.post("/items", (req, res) => {
 
         Items.create(newItem, (err, items) => {
             if (err) {
-                console.log("Error creating item:", err);
+                console.log(err);
             } else {
                 res.redirect("items");
             }
