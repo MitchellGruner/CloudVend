@@ -7,7 +7,7 @@ section#display-items.display-items-container.show-item .body-container-items-fo
     text-align: left;
 }
 section#display-items.display-items-container.show-item .body-container-items-forms .comments-container h1,
-section#display-items.display-items-container.show-item .body-container-items-forms .comments-container span,
+section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete,
 section#display-items.display-items-container.show-item .body-container-items-forms .comment-link,
 section#display-items.display-items-container.show-item .body-container-items-forms .comment-link a {
     font-weight: bolder;
@@ -46,25 +46,23 @@ section#display-items.display-items-container.show-item .body-container-items-fo
     font-size: 1.1em;
     margin: 0em auto 0.81em;
 }
-section#display-items.display-items-container.show-item .body-container-items-forms .comments-container span {
-    display: contents;
-    color: #0F4C81;
-    font-style: initial;
+section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete {
     margin: 0.55em auto;
 }
-section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button,
+section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a,
 section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
     text-decoration: underline;
 }
-section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
+section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a {
     font-size: 1em;
     background-color: transparent;
     border: none;
+    margin: 1.2em 0.5em 0em 0em;
 }
-section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
+section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a:first-of-type {
     color: #4CAE4C;
 }
-section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form:last-of-type button {
+section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a:last-of-type {
     color: #FF0000;
 }
 section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
@@ -135,10 +133,10 @@ main section#display-items.display-items-container > div:nth-child(2) > div > di
         font-size: 1.2em;
         margin: 0em auto 0.9em;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container span {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete {
         margin: 0.61em auto;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a {
         font-size: 1.1em;
     }
     section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
@@ -181,10 +179,10 @@ main section#display-items.display-items-container > div:nth-child(2) > div > di
         font-size: 1.3em;
         margin: 0em auto 1em;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container span {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete {
         margin: 0.67em auto;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a {
         font-size: 1.2em;
     }
     section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
@@ -228,21 +226,21 @@ main section#display-items.display-items-container > div:nth-child(2) > div > di
         font-size: 1.4em;
         margin: 0em auto 1.1em;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container span {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete {
         margin: 0.74em auto;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button,
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button:hover,
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a,
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a:hover,
     section#display-items.display-items-container.show-item .body-container-items-forms .comment-link,
     section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link:hover,
     section#display-items.display-items-container.show-item .body-container-items-forms h1.comment-link a,
     section#display-items.display-items-container.show-item .body-container-items-forms h1.comment-link a:hover {
         transition: 0.5s ease-in-out;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a {
         font-size: 1.3em;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button:hover,
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a:hover,
     section#display-items.display-items-container.show-item .body-container-items-forms a.comment-link:hover {
         color: #1E1E1E;
     }
@@ -273,10 +271,10 @@ main section#display-items.display-items-container > div:nth-child(2) > div > di
         font-size: 1.5em;
         margin: 0em auto 1.2em;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container span {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete {
         margin: 0.81em auto;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a {
         font-size: 1.4em;
     }
     section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
@@ -316,10 +314,10 @@ main section#display-items.display-items-container > div:nth-child(2) > div > di
         font-size: 1.6em;
         margin: 0em auto 1.3em;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container span {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete {
         margin: 0.9em auto;
     }
-    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container form button {
+    section#display-items.display-items-container.show-item .body-container-items-forms .comments-container div.comments-edit-delete a {
         font-size: 1.3em;
     }
     section#display-items.display-items-container.show-item .body-container-items-forms .comment-link {
