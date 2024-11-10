@@ -12,7 +12,7 @@ router.get("/items/:id/comments/new", middleware.isLoggedIn, (req, res) => {
 		} else {
 			res.render("comments/new", {items: items});
 		}
-	})
+	});
 });
 
 // this logic will create a comment.
@@ -66,8 +66,6 @@ router.post("/items/:id/comments/new", middleware.isLoggedIn, (req, res) => {
                             items.comments.push(comment);
                             items.save();
 
-                            console.log(comment);
-
                             res.redirect("/items/" + items._id);
                         }
                     });
@@ -77,15 +75,71 @@ router.post("/items/:id/comments/new", middleware.isLoggedIn, (req, res) => {
     });
 });
 
-// comment destroy route.
-router.delete("/comments/:comment_id", (req, res) => {
-	Comment.findByIdAndRemove(req.params.comment_id, (err) => {
-		if(err){
-			res.redirect("back");
-		} else {
-			res.redirect("/items/" + req.params.id);
-		}
-	});
+// edit a comment.
+router.get("/comments/:comment_id/edit", (req, res) => {
+    Comment.findById(req.params.comment_id, (err, comment) => {
+        if (err) {
+            console.log(err);
+            res.redirect("back");
+        } else {
+
+            // find the item that contains the comment.
+            Items.findOne({ comments: req.params.comment_id }, (err, item) => {
+                if (err || !item) {
+                    console.log(err);
+                    res.redirect("back");
+                } else {
+                    res.render("comments/edit", {
+                        comment: comment,
+                        itemId: item._id
+                    });
+                }
+            });
+        }
+    });
+});
+
+// update a comment.
+router.put("/comments/:comment_id/update", (req, res) => {
+    var newComment = { text: req.body.comment.text };
+
+    Comment.findByIdAndUpdate(req.params.comment_id, newComment, (err, updatedComment) => {
+        if (err) {
+            res.redirect("back");
+        } else {
+            res.redirect("/items/" + req.body.item_id);
+        }
+    });
+});
+
+// delete a comment.
+router.get("/comments/:comment_id/delete", middleware.checkProfile, (req, res) => {
+
+    // find the item that contains the comment.
+    Items.findOne({ comments: req.params.comment_id }, (err, item) => {
+        if (err || !item) {
+            console.log(err);
+            res.redirect("back");
+        } else {
+            
+            Comment.findByIdAndRemove(req.params.comment_id, (err) => {
+                if (err) {
+                    res.redirect("back");
+                } else {
+
+                    // remove the comment reference from the item's comments array.
+                    item.comments.pull(req.params.comment_id);
+                    item.save((err) => {
+                        if (err) {
+                            res.redirect("back");
+                        } else {
+                            res.redirect("/items/" + item._id);
+                        }
+                    });
+                }
+            });
+        }
+    });
 });
 
 module.exports = router;
