@@ -83,13 +83,11 @@
 								</a>
 						
 								<%if(currentUser && comment.author.id.equals(currentUser._id)){%>
-									<div>
-										<form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
-											<button>Edit</button>
-										</form>
-										<form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
-											<button>Delete</button>
-										</form>
+									<div class="comments-edit-delete">
+										<a href="../comments/<%=comment._id%>/edit">Edit
+										</a>
+										<a href="../comments/<%=comment._id%>/delete">Delete
+										</a>
 									</div>
 								<%}%>
 							</div>
