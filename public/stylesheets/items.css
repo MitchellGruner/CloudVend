@@ -190,7 +190,7 @@ main section#display-items.profile-page.display-items-container div:nth-child(2)
 }
 main section#display-items.display-items-container div:nth-child(2) div div.container p {
     color: #1E1E1E;
-    margin-top: 1.2em;
+    margin: 1.2em auto 0.9em;
     font-size: 1em;
 }
 main section#display-items.display-items-container div:nth-child(2) div div.container h4,
@@ -341,7 +341,7 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
         font-size: 1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container p {
-        margin-top: 1.3em;
+        margin: 1.3em auto 1em;
         font-size: 1.1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4,
@@ -413,7 +413,7 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
         font-size: 1.1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container p {
-        margin-top: 1.4em;
+        margin: 1.4em auto 1.1em;
         font-size: 1.2em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container h4,
@@ -494,7 +494,7 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
         font-size: 1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container p {
-        margin-top: 1.2em;
+        margin: 1.2em auto 1.1em;
         font-size: 1em;
     }
     main section#display-items.display-items-container.show-item div:nth-child(2) div div.container p {
@@ -701,7 +701,7 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
         font-size: 1.1em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container p {
-        margin-top: 1.3em;
+        margin: 1.3em auto 1.2em;
         font-size: 1.1em;
     }
     main section#display-items.display-items-container.show-item div:nth-child(2) div div.container p {
@@ -797,7 +797,7 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
         font-size: 1.3em;
     }
     main section#display-items.display-items-container div:nth-child(2) div div.container p {
-        margin-top: 1.5em;
+        margin: 1.5em auto 1.2em;
         font-size: 1.3em;
     }
     main section#display-items.display-items-container.show-item div:nth-child(2) div div.container p {
