@@ -42,6 +42,9 @@ main section.form-container div.body-container-items-forms form textarea {
 	padding: 0.73em 1em;
     margin: 0.5em auto;
 }
+main section.form-container div.body-container-items-forms form textarea {
+    height: 15em;
+}
 main section.form-container div.body-container-items-forms form input::placeholder,
 main section.form-container div.body-container-items-forms form textarea::placeholder {
     opacity: 0.8;
