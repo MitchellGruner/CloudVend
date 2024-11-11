@@ -8,30 +8,30 @@ var value2 = profiles.other || "";
 %>
 
 <section class="form-container edit-container">
-	<div class="body-container-items-forms container">
-		<h1><span>Edit your profile, <%=currentUser.username%></span></h1>
-		
-		<form action="/user/<%=profiles._id%>/update/?_method=PUT" method="POST">
-			<h2>Profile Image</h2>
-			<input type="input" name="image" value="<%=profiles.image%>">
+    <div class="body-container-items-forms container">
+        <h1><span>Edit your profile, <%=currentUser.username%></span></h1>
+        
+        <form action="/user/<%=profiles._id%>/update/?_method=PUT" method="POST">
+            <h2>Profile Image</h2>
+            <input type="input" name="image" value="<%=profiles.image%>" required>
 
-			<h2>Background Image</h2>
-			<input type="input" name="backgroundImage" value="<%=profiles.backgroundImage%>">
+            <h2>Background Image</h2>
+            <input type="input" name="backgroundImage" value="<%=profiles.backgroundImage%>" required>
 
-			<h2>Biography</h2>
-			<input type="input" name="biography" value="<%=profiles.biography%>">
+            <h2>Biography</h2>
+            <textarea name="biography" required><%= profiles.biography %></textarea>
 
-			<h2>Facebook Link</h2>
-			<input type="input" name="facebook" value="<%=value0%>">
+            <h2>Facebook Link</h2>
+            <input type="input" name="facebook" value="<%=value0%>">
 
-			<h2>Instagram Link</h2>
-			<input type="input" name="instagram" value="<%=value1%>">
+            <h2>Instagram Link</h2>
+            <input type="input" name="instagram" value="<%=value1%>">
 
-			<h2>Other Link</h2>
-			<input type="input" name="other" value="<%=value2%>">
+            <h2>Other Link</h2>
+            <input type="input" name="other" value="<%=value2%>">
 
-			<button type="submit">Submit!</button>
-			<a href="javascript:history.back()">Go Back</a>
-		</form>
-	</div>
+            <button type="submit">Submit!</button>
+            <a href="javascript:history.back()">Go Back</a>
+        </form>
+    </div>
 </section>
