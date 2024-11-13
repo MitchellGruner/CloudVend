@@ -551,7 +551,7 @@ main section#display-items.display-items-container.show-item div:nth-child(2) di
         max-width: 380px;
         height: fit-content;
         border: 2px solid #0F4C81;
-        background-color: transparent;
+        background-color: #fff;
         position: fixed;
         box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
         border-radius: 1em;
