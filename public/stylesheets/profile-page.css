@@ -12,9 +12,6 @@ section#display-items.profile-page div.body-container-items-forms > div:nth-chil
     position: relative;
     z-index: 0;
 }
-section#display-items.profile-page {
-    background-color: rgba(240, 240, 240, 0.9);
-}
 section#display-items.profile-page div.body-container-items-forms article {
     background-color: #fff !important;
 }
