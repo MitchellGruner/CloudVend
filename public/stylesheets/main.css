@@ -1,3 +1,9 @@
+main {
+	background-color: rgba(240, 240, 240, 0.9);
+	min-height: 100vh;
+	height: auto;
+	width: 100%;
+}
 main * {
 	font-family: "Inter", sans-serif;
 	font-optical-sizing: auto;
