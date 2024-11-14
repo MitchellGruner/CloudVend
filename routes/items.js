@@ -86,7 +86,7 @@ router.post("/items", (req, res) => {
             if (err) {
                 console.log(err);
             } else {
-                res.redirect("items");
+                res.redirect("items/all");
             }
         });
     });
@@ -137,7 +137,7 @@ router.put("/items/:id/update", (req, res) => {
 		if(err){
 			res.redirect("landing");
 		} else {
-			res.redirect("/items");
+			res.redirect("/items/all");
 		}
 	});
 });
@@ -148,7 +148,7 @@ router.get("/items/:id/delete", middleware.checkProfile, (req, res) => {
 		if(err){
 			res.redirect("/items");
 		} else {
-			res.redirect("/items");
+			res.redirect("/items/all");
 		}
 	});
 });
