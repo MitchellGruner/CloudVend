@@ -12,7 +12,7 @@
 				<% if (currentUser.city == item.author.city) {%>
 					<div>
 						<div class="category-container">
-							<h1><span>Category</span></h1>
+							<h1><span>Created by <%=item.author.username%></span></h1>
 						</div>
 		
 						<% if (item.image) { %>
@@ -40,11 +40,11 @@
 						
 						<div class="container">
 							<div>
-								<h2><span><%=item.name%></span></h2>
+								<h2><%=item.name%></h2>
 								<span class="price">$<%=item.price%></span>
 							</div>
 							<h3><%=item.condition%></h3>
-							<p>"<%=item.description%>" - <%=item.author.username%></p>
+							<p class="paragraph-limit-short">"<%=item.description%>" - <%=item.author.username%></p>
 							<hr />
 							<h4>Item available in&nbsp;<span><%=item.author.city%></span></h4>
 						</div>

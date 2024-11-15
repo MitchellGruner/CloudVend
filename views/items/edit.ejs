@@ -9,7 +9,7 @@
 			<h2>Name</h2>
 			<input type="input" name="name" value="<%=items.name%>">
 
-			<h2>Category</h2>
+			<h2>Item Image</h2>
 			<input type="input" name="image" value="<%=items.image%>">
 
 			<h2>Price</h2>
@@ -19,7 +19,7 @@
 			<input type="input" name="condition" value="<%=items.condition%>">
 
 			<h2>Description</h2>
-			<input type="input" name="description" value="<%=items.description%>">
+			<textarea name="description" value="<%=items.description%>" required><%=items.description%></textarea>
 
 			<button type="submit">Submit!</button>
 			<a href="javascript:history.back()">Go Back</a>
