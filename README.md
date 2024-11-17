@@ -7,7 +7,7 @@ campers to leave reviewes on campgrounds.  I loosely used his coding ideas in my
 
 This project was implemented with Node.js, Mongoose, MongoDB, Express.js, JavaScript, HTML and CSS, and Passport.js.
 
-### Link to project: https://cloudvend.onrender.com/
+### Link to project: [CloudVend]([https://master--vermillion-narwhal-b9ab97.netlify.app/](https://cloudvend.onrender.com/))
 
 ## How It's Made
 
@@ -27,5 +27,5 @@ I learned so much with this project, such as adding a database filled with user'
 6. Type 'git clone _url copied from step 2_'.
 7. Make sure you are in the root directory of the folder (the /app, /public etc folders should be here).
 8. Type 'npm install'.
-9. Type 'npm run dev'.
+9. Type 'node app.js'.
 10. Additionally, the project can be viewed here (without running this project on your local machine): https://cloudvend.onrender.com/
