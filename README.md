@@ -11,7 +11,7 @@ This project was implemented with Node.js, Mongoose, MongoDB, Express.js, JavaSc
 
 ## How It's Made
 
-### Tech used: Mongoose, Express.js, Node.js, HTML, CSS, JavaScript, MongoDB
+### Tech used: Mongoose, Express.js, Node.js, MongoDB, HTML, CSS, JavaScript
 
 ## Lessons Learned:
 
