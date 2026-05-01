@@ -1,145 +1,150 @@
 var express = require('express'),
-	router = express.Router({mergeParams: true}),
+	router = express.Router({ mergeParams: true }),
 	Items = require("../models/items"),
 	Comment = require("../models/comments"),
+	Profile = require("../models/profile"),
 	middleware = require("../middleware");
 
 // route will send user to comment creation page.
-router.get("/items/:id/comments/new", middleware.isLoggedIn, (req, res) => {
-	Items.findById(req.params.id, (err, items) => {
-		if(err){
-			console.log(err);
-		} else {
-			res.render("comments/new", {items: items});
+router.get("/items/:id/comments/new", middleware.isLoggedIn, async (req, res) => {
+	try {
+		const items = await Items.findById(req.params.id);
+
+		if (!items) {
+			console.log("Item not found");
+			return res.redirect("/items");
 		}
-	});
+
+		res.render("comments/new", { items: items });
+	} catch (err) {
+		console.log(err);
+		res.redirect("/items");
+	}
 });
 
 // this logic will create a comment.
-router.post("/items/:id/comments/new", middleware.isLoggedIn, (req, res) => {
-    Items.findById(req.params.id, (err, items) => {
-        if (err) {
-            console.log(err);
-            res.redirect("/items");
-        } else {
-			
-            // find the profile associated with the user.
-            Profile.findOne({ user: req.user._id }, (err, foundProfile) => {
-                if (err || !foundProfile) {
-                    console.log(err);
-                    res.redirect("/items");
-                } else {
-                    var text = req.body.text;
-                    var author = {
-                        id: req.user._id,
-                        username: req.user.username,
-                        city: req.user.city,
-                        email: req.user.email,
-                        image: req.user.image,
-                        profileId: foundProfile._id,
-                        profileImage: foundProfile.image,
-                        biography: foundProfile.biography,
-                        backgroundImage: foundProfile.backgroundImage,
-                        facebook: foundProfile.facebook,
-                        instagram: foundProfile.instagram,
-                        other: foundProfile.other
-                    };
-                    var newComment = { text: text, author: author };
-                    Comment.create(newComment, (err, comment) => {
-                        if (err) {
-                            console.log(err);
-                        } else {
-                            comment.author.id = req.user._id;
-                            comment.author.username = req.user.username;
-                            comment.author.city = req.user.city;
-                            comment.author.email = req.user.email;
-                            comment.author.image = req.user.image;
-                            comment.author.profileId = foundProfile._id;
-                            comment.author.profileImage = foundProfile.image;
-                            comment.author.biography = foundProfile.biography;
-                            comment.author.backgroundImage = foundProfile.backgroundImage;
-                            comment.author.facebook = foundProfile.facebook;
-                            comment.author.instagram = foundProfile.instagram;
-                            comment.author.other = foundProfile.other;
-                            comment.save();
+router.post("/items/:id/comments/new", middleware.isLoggedIn, async (req, res) => {
+	try {
+		const items = await Items.findById(req.params.id);
 
-                            items.comments.push(comment);
-                            items.save();
+		if (!items) {
+			console.log("Item not found");
+			return res.redirect("/items");
+		}
 
-                            res.redirect("/items/" + items._id);
-                        }
-                    });
-                }
-            });
-        }
-    });
+		// find the profile associated with the user.
+		const foundProfile = await Profile.findOne({ user: req.user._id });
+
+		if (!foundProfile) {
+			console.log("Profile not found");
+			return res.redirect("/items");
+		}
+
+		var text = req.body.text;
+
+		var author = {
+			id: req.user._id,
+			username: req.user.username,
+			city: req.user.city,
+			email: req.user.email,
+			image: req.user.image,
+			profileId: foundProfile._id,
+			profileImage: foundProfile.image,
+			biography: foundProfile.biography,
+			backgroundImage: foundProfile.backgroundImage,
+			facebook: foundProfile.facebook,
+			instagram: foundProfile.instagram,
+			other: foundProfile.other
+		};
+
+		var newComment = { text: text, author: author };
+
+		const comment = await Comment.create(newComment);
+
+		items.comments.push(comment);
+		await items.save();
+
+		res.redirect("/items/" + items._id);
+
+	} catch (err) {
+		console.log(err);
+		res.redirect("/items");
+	}
 });
 
 // edit a comment.
-router.get("/comments/:comment_id/edit", (req, res) => {
-    Comment.findById(req.params.comment_id, (err, comment) => {
-        if (err) {
-            console.log(err);
-            res.redirect("back");
-        } else {
+router.get("/comments/:comment_id/edit", async (req, res) => {
+	try {
+		const comment = await Comment.findById(req.params.comment_id);
 
-            // find the item that contains the comment.
-            Items.findOne({ comments: req.params.comment_id }, (err, item) => {
-                if (err || !item) {
-                    console.log(err);
-                    res.redirect("back");
-                } else {
-                    res.render("comments/edit", {
-                        comment: comment,
-                        itemId: item._id
-                    });
-                }
-            });
-        }
-    });
+		if (!comment) {
+			console.log("Comment not found");
+			return res.redirect("back");
+		}
+
+		const item = await Items.findOne({ comments: req.params.comment_id });
+
+		if (!item) {
+			console.log("Item not found");
+			return res.redirect("back");
+		}
+
+		res.render("comments/edit", {
+			comment: comment,
+			itemId: item._id
+		});
+
+	} catch (err) {
+		console.log(err);
+		res.redirect("back");
+	}
 });
 
 // update a comment.
-router.put("/comments/:comment_id/update", (req, res) => {
-    var newComment = { text: req.body.comment.text };
+router.put("/comments/:comment_id/update", async (req, res) => {
+	try {
+		var newComment = { text: req.body.comment.text };
 
-    Comment.findByIdAndUpdate(req.params.comment_id, newComment, (err, updatedComment) => {
-        if (err) {
-            res.redirect("back");
-        } else {
-            res.redirect("/items/" + req.body.item_id);
-        }
-    });
+		const updatedComment = await Comment.findByIdAndUpdate(
+			req.params.comment_id,
+			newComment,
+			{ new: true }
+		);
+
+		if (!updatedComment) {
+			return res.redirect("back");
+		}
+
+		res.redirect("/items/" + req.body.item_id);
+
+	} catch (err) {
+		console.log(err);
+		res.redirect("back");
+	}
 });
 
 // delete a comment.
-router.get("/comments/:comment_id/delete", middleware.checkProfile, (req, res) => {
+router.get("/comments/:comment_id/delete", middleware.checkProfile, async (req, res) => {
+	try {
+		const item = await Items.findOne({ comments: req.params.comment_id });
 
-    // find the item that contains the comment.
-    Items.findOne({ comments: req.params.comment_id }, (err, item) => {
-        if (err || !item) {
-            console.log(err);
-            res.redirect("back");
-        } else {
-            
-            Comment.findByIdAndRemove(req.params.comment_id, (err) => {
-                if (err) {
-                    res.redirect("back");
-                } else {
+		if (!item) {
+			console.log("Item not found");
+			return res.redirect("back");
+		}
 
-                    // remove the comment reference from the item's comments array.
-                    item.comments.pull(req.params.comment_id);
-                    item.save((err) => {
-                        if (err) {
-                            res.redirect("back");
-                        } else {
-                            res.redirect("/items/" + item._id);
-                        }
-                    });
-                }
-            });
-        }
-    });
+		await Comment.findByIdAndDelete(req.params.comment_id);
+
+		// remove reference from item
+		item.comments.pull(req.params.comment_id);
+		await item.save();
+
+		res.redirect("/items/" + item._id);
+
+	} catch (err) {
+		console.log(err);
+		res.redirect("back");
+	}
 });
 
 module.exports = router;
