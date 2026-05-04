@@ -41,7 +41,7 @@ var commentRoutes = require("./routes/comments"),
 
 
 // connect app.get.
-app.use(helmet());
+app.use(helmet()); 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
