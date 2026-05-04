@@ -41,7 +41,37 @@ var commentRoutes = require("./routes/comments"),
 
 
 // connect app.get.
-app.use(helmet()); 
+app.use(
+	helmet.contentSecurityPolicy({
+	  directives: {
+		defaultSrc: ["'self'"],
+		scriptSrc: [
+		  "'self'",
+		  "https://code.jquery.com",
+		  "https://stackpath.bootstrapcdn.com",
+		  "https://maxcdn.bootstrapcdn.com"
+		],
+		styleSrc: [
+		  "'self'",
+		  "'unsafe-inline'",
+		  "https://stackpath.bootstrapcdn.com",
+		  "https://cdnjs.cloudflare.com",
+		  "https://fonts.googleapis.com",
+		  "https://maxcdn.bootstrapcdn.com"
+		],
+		imgSrc: [
+		  "'self'",
+		  "data:",
+		  "https://images.unsplash.com",
+		  "https://plus.unsplash.com"
+		],
+		fontSrc: [
+		  "'self'",
+		  "https://fonts.gstatic.com"
+		]
+	  }
+	})
+  );
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
